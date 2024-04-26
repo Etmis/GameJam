@@ -7,12 +7,13 @@ public class EnemyHP : HPSystem
     [Header("Reawrd for user")]
     [SerializeField]
     private int MoneyForKill;
-    public void DoDamage(int damage)
+    public void DoDamage(float damage)
     {
         if ((currentHP - damage) <= 0)
             Money.Instance.Add(MoneyForKill);
         base.DoDamage(damage);
-        
+        LaserTower laserTower = new LaserTower();
+        laserTower.Attack();
     }
 
     private void Update()

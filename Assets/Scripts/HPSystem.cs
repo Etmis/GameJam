@@ -7,13 +7,13 @@ public class HPSystem : MonoBehaviour
     [Header("Enemy_Setting")]
     [SerializeField]
     protected int maxHP; // pøi startu
-    protected int currentHP; // jeho aktuální
+    protected float currentHP; // jeho aktuální
 
     private void Start()
     {
         currentHP = maxHP;
     }
-    protected void DoDamage(int damage)
+    protected void DoDamage(float damage)
     {
         if (currentHP <= 0)
         {
