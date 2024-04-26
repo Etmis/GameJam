@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+
+public class Money : MonoBehaviour
+{
+    private static Money instance;
+    //prefs Money
+    public static Money Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new Money();
+            }
+            return instance;
+        }
+    }
+
+    private int _money;
+    public int CurrentMoney => _money;
+
+    private void Start()
+    {
+        _money = PlayerPrefs.GetInt("Money", 0);
+
+
+    }
+
+
+    public void ResetMoney()
+    {
+        _money = 0;
+        PlayerPrefs.SetInt("Money", _money);
+
+    }
+
+
+    public void Remove(int value)
+    {
+        _money -= value;
+        PlayerPrefs.SetInt("Money", _money);
+
+    }
+    public void Add(int value)
+    {
+        
+        _money += value;
+        PlayerPrefs.SetInt("Money", _money);
+
+    }
+
+}
