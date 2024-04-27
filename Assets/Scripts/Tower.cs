@@ -21,8 +21,8 @@ public class Tower : MonoBehaviour
     [SerializeField]
     protected int upgradePrice;
     protected float currentPrice;
-    [SerializeField]
-    protected Transform RotateHeadofTower;
+   // [SerializeField]
+   // protected Transform RotateHeadofTower;
     [SerializeField]
     protected Transform RangeTransform;
     protected float timeToFire;

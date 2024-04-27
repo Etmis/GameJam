@@ -7,12 +7,16 @@ public class LaserTower : Tower
     [SerializeField]
     protected Transform LaserPlace;
     [SerializeField]
+    protected Transform LaserPlacestatic;
+    [SerializeField]
     protected LineRenderer lineRenderer;
   
     public override void Attacks()
     {
+
         if (Enemies.Count > 0 && timeToFire <= 0)
         {
+            lineRenderer.SetPosition(0, LaserPlacestatic.position);
             StartCoroutine(DrawLineForDuration());
             StopCoroutine(DrawLineForDuration());
 
@@ -26,11 +30,11 @@ public class LaserTower : Tower
         // laser view
 
         lineRenderer.enabled = true;
-        lineRenderer.startWidth = 0.4f;
-        lineRenderer.SetPosition(0, LaserPlace.position);
-        lineRenderer.SetPosition(1, Enemies[0].transform.position);
+        lineRenderer.startWidth = 1f;
+        lineRenderer.SetPosition(1, LaserPlace.position);
+        lineRenderer.SetPosition(2, Enemies[0].transform.position);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
         // Vypnutí LineRenderer po uplynutí èasu duration
         lineRenderer.enabled = false;
