@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject ninethEnemy;
     [SerializeField] GameObject tenthEnemy;
 
-    List<Wave> waves = new List<Wave>();
+    public List<Wave> waves = new List<Wave>();
 
     int currentWaveIndex = 0;
 
@@ -31,27 +31,26 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && currentWaveIndex < waves.Count)
-        {
-            StartWave(waves[currentWaveIndex]);
-            currentWaveIndex++;
-        }
+
     }
 
-    public void StartWave(Wave wave)
+    public void StartWave()
     {
-        StartCoroutine(SpawnEnemies(wave));
+        StartCoroutine(SpawnEnemies());
     }
 
-    public IEnumerator SpawnEnemies(Wave wave)
+    public IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(10);
-        foreach (EnemySpawnData spawnData in wave.enemies)
+        foreach (Wave wave in waves)
         {
-            for (int i = 0; i < spawnData.count; i++)
+            yield return new WaitForSeconds(3);
+            foreach (EnemySpawnData spawnData in wave.enemies)
             {
-                yield return new WaitForSeconds(spawnData.cooldown);
-                Instantiate(spawnData.enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+                for (int i = 0; i < spawnData.count; i++)
+                {
+                    yield return new WaitForSeconds(spawnData.cooldown);
+                    Instantiate(spawnData.enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+                }
             }
         }
     }

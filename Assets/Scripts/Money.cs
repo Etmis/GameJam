@@ -24,16 +24,14 @@ public class Money : MonoBehaviour
 
     private void Start()
     {
-        _money = PlayerPrefs.GetInt("Money", 0);
-
+    _money = 0;
 
     }
 
-
+    
     public void ResetMoney()
     {
         _money = 0;
-        PlayerPrefs.SetInt("Money", _money);
 
     }
 
@@ -41,14 +39,12 @@ public class Money : MonoBehaviour
     public void Remove(int value)
     {
         _money -= value;
-        PlayerPrefs.SetInt("Money", _money);
 
     }
     public void Add(int value)
     {
         
         _money += value;
-        PlayerPrefs.SetInt("Money", _money);
 
     }
 
