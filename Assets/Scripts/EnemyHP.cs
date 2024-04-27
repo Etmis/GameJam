@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHP : HPSystem
 {
@@ -8,7 +10,14 @@ public class EnemyHP : HPSystem
     [SerializeField]
     private int MoneyForKill;
 
-   
+    private float normalSpeed;
+    private float freezeSpeed;
+
+    private void Start()
+    {
+        normalSpeed = GetComponent<NavMeshAgent>().speed;
+        freezeSpeed = GetComponent<NavMeshAgent>().speed / 2;
+    }
     public void DooDamage(float damage)
     {
         if ((currentHP - damage) <= 0) { 
@@ -20,9 +29,23 @@ public class EnemyHP : HPSystem
         base.DoDamage(damage);
     }
 
-    private void Update()
+    internal void FreezeDamage(float coolDown)
     {
        
+        StartCoroutine(freezing(coolDown));
+    }
+
+    IEnumerator freezing(float coolDown)
+    {
+        GetComponent<NavMeshAgent>().speed = freezeSpeed;
+        yield return new WaitForSeconds(coolDown);
+        GetComponent<NavMeshAgent>().speed = normalSpeed;
+       
+
+    }
+    private void Update()
+    {
+        
     }
     /* private void BuildLaserTower()
      {

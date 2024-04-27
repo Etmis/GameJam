@@ -13,15 +13,15 @@ public class LaserTower : Tower
   
     public override void Attacks()
     {
-
-        if (Enemies.Count > 0 && timeToFire <= 0)
+        base.Attacks();
+        if (closestN != null)
         {
+
             lineRenderer.SetPosition(0, LaserPlacestatic.position);
             StartCoroutine(DrawLineForDuration());
             StopCoroutine(DrawLineForDuration());
-
         }
-        base.Attacks();
+        
         
     }
 
@@ -32,7 +32,7 @@ public class LaserTower : Tower
         lineRenderer.enabled = true;
         lineRenderer.startWidth = 1f;
         lineRenderer.SetPosition(1, LaserPlace.position);
-        lineRenderer.SetPosition(2, Enemies[0].transform.position);
+        lineRenderer.SetPosition(2, closestN.transform.position);
 
         yield return new WaitForSeconds(1f);
 
