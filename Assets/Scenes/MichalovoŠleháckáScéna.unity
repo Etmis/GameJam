@@ -412,15 +412,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers:
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 4681734404340949745, guid: 27ae2fa171e24cf47ad961f407306b52, type: 3}
+  - {fileID: 7916222174325414767, guid: 857357df42f649f40a66c2e19669829a, type: 3}
+  - {fileID: 919132149155446097, guid: 22afe3c881f4d4546bbb8af0fb67d237, type: 3}
   fakeTowers:
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
-  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 4681734404340949745, guid: 27ae2fa171e24cf47ad961f407306b52, type: 3}
+  - {fileID: 7916222174325414767, guid: 857357df42f649f40a66c2e19669829a, type: 3}
+  - {fileID: 919132149155446097, guid: 22afe3c881f4d4546bbb8af0fb67d237, type: 3}
   parent: {fileID: 1249409472}
 --- !u!1 &1788292043
 GameObject:
