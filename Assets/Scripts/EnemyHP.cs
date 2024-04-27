@@ -12,6 +12,7 @@ public class EnemyHP : HPSystem
     public void DooDamage(float damage)
     {
         if ((currentHP - damage) <= 0) { 
+            
             Money.Instance.Add(MoneyForKill);
 
 
