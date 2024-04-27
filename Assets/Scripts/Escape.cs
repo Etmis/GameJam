@@ -13,6 +13,7 @@ public class Escape : MonoBehaviour
     [SerializeField] Slider fovSlider;
     [SerializeField] Slider sensSlider;
     [SerializeField] TMPro.TMP_Text tutorialText;
+    public static bool isInSettings;
     
     void Start()
     {
@@ -39,7 +40,7 @@ public class Escape : MonoBehaviour
                 
                 tutorialText.gameObject.SetActive(true);
                 OutOfMenuContextStuffNeeded();
-               
+                isInSettings = false;
                 
 
             }
@@ -50,6 +51,7 @@ public class Escape : MonoBehaviour
                     escapPaner.SetActive(true);
                     tutorialText.gameObject.SetActive(false);
                     MenuContextStuffNeeded();
+                    isInSettings=true;
                     
                 }
                 
