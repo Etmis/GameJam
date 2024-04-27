@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 7015884960211497132}
   - component: {fileID: 7015884960211497133}
   - component: {fileID: 7015884960211497134}
+  - component: {fileID: 1250509385435952627}
+  - component: {fileID: 2937419340190838561}
   m_Layer: 7
   m_Name: FirstEnemy
   m_TagString: Untagged
@@ -167,6 +169,36 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!54 &1250509385435952627
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015884960211497135}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2937419340190838561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015884960211497135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c424f0a18cdd75a41873f58e73c734c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  MoneyForKill: 50
 --- !u!1 &7015884960563768618
 GameObject:
   m_ObjectHideFlags: 0

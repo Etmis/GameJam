@@ -8,12 +8,14 @@ public class EnemyHP : HPSystem
     [SerializeField]
     private int MoneyForKill;
 
-    [SerializeField]
-    GameObject TowerPrefab;
+   
     public void DooDamage(float damage)
     {
-        if ((currentHP - damage) <= 0)
+        if ((currentHP - damage) <= 0) { 
             Money.Instance.Add(MoneyForKill);
+
+
+        }
         base.DoDamage(damage);
     }
 
