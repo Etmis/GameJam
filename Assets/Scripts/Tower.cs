@@ -21,8 +21,7 @@ public class Tower : MonoBehaviour
     [SerializeField]
     protected int upgradePrice;
     protected float currentPrice;
-   // [SerializeField]
-   // protected Transform RotateHeadofTower;
+   
     [SerializeField]
     protected Transform RangeTransform;
     protected float timeToFire;
@@ -45,8 +44,11 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
+
         timeToFire -= Time.deltaTime;
+        if (timeToFire < 0) { 
         Attacks();
+        }
     }
    
 
@@ -54,6 +56,7 @@ public class Tower : MonoBehaviour
     public virtual void Attacks()
     {
         
+        timeToFire = fire_Rate;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
          closestN = null;
