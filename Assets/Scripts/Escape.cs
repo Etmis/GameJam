@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Escape : MonoBehaviour
 {
-    [SerializeField]GameObject paner;
+    [SerializeField]GameObject escapPaner;
+    [SerializeField]GameObject settingsPaner;
+    [SerializeField] Slider slider;
     void Start()
     {
         
@@ -15,14 +18,32 @@ public class Escape : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(paner.activeInHierarchy)
+            if(escapPaner.activeInHierarchy)
             {
-                paner.SetActive(false);
+                escapPaner.SetActive(false);
             }else
             {
-                paner.SetActive(true);
+                if(!settingsPaner.activeInHierarchy)
+                {
+                    escapPaner.SetActive(true);
+                }
+                
             }
 
         }
+    }
+    public void GoToSettings()
+    {
+        escapPaner.SetActive(false);
+        settingsPaner.SetActive(true);
+    }
+    public void BackToMenu()
+    {
+        escapPaner.SetActive(true);
+        settingsPaner.SetActive(false);
+    }
+    public void ChnageFow()
+    {
+        Camera.main.fieldOfView = slider.value;
     }
 }
