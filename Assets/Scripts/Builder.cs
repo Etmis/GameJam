@@ -14,6 +14,11 @@ public class Builder : MonoBehaviour
     List<GameObject> fakeTowers = new List<GameObject>();
 
     [SerializeField]
+    List<Sprite> images = new List<Sprite>();
+
+    [SerializeField] Image img;
+
+    [SerializeField]
     GameObject parent;
 
     private int index = 0;
@@ -42,6 +47,7 @@ public class Builder : MonoBehaviour
                 InstantiateTowerIfNoCollision();
             }
         }
+        img.sprite = images[index];
     }
 
     private void CheckButton()
@@ -52,10 +58,12 @@ public class Builder : MonoBehaviour
             {
                 builder = false;
                 currentTower = towers[0];
+                img.gameObject.SetActive(false);
             }
             else if (!builder)
             {
                 builder = true;
+                img.gameObject.SetActive(true);
             }
         }
     }
