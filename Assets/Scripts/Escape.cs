@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Escape : MonoBehaviour
 {
     [SerializeField]GameObject escapPaner;
-    [SerializeField] GameObject settingsPaner;
+    [SerializeField]GameObject settingsPaner;
+    [SerializeField] Slider slider;
     void Start()
     {
         
@@ -39,5 +41,9 @@ public class Escape : MonoBehaviour
     {
         escapPaner.SetActive(true);
         settingsPaner.SetActive(false);
+    }
+    public void ChnageFow()
+    {
+        Camera.main.fieldOfView = slider.value;
     }
 }
