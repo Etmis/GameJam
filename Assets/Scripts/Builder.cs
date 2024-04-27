@@ -101,15 +101,13 @@ public class Builder : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         bool canSpawn = true;
-
-        if (Physics.Raycast(ray, out hit, 5))
+        int layerMask = LayerMask.GetMask("FakeTower");
+        if (Physics.Raycast(ray, out hit, 5, ~layerMask))
         {
-            Debug.Log("negr");
-            // Kontrola, zda je na pozici kurzoru myši kolizní objekt
             Collider[] colliders = Physics.OverlapSphere(hit.point, 2f);
             foreach (Collider collider in colliders)
             {
-                if (collider.CompareTag("Blockator"))
+                if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
                 {
                     canSpawn = false;
                     break;
@@ -127,8 +125,10 @@ public class Builder : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        int layerMask = LayerMask.GetMask("Tower");
-        if (Physics.Raycast(ray, out hit, 5, ~layerMask))
+        int layerMask1 = LayerMask.GetMask("FakeTower");
+        int layerMask2 = LayerMask.GetMask("Tower");
+        int combinedLayerMask = layerMask1 | layerMask2;
+        if (Physics.Raycast(ray, out hit, 5, ~combinedLayerMask))
         {
             parent.transform.position = hit.point;
 
