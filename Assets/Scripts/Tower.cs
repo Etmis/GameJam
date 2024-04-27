@@ -44,45 +44,41 @@ public class Tower : MonoBehaviour
     private void Update()
     {
         timeToFire -= Time.deltaTime;
+        Attacks();
     }
-    private void OnTriggerEnter(Collider other)
+   
+    public void AddAttackList(EnemyHP enemy) {
+        Enemies.Add(enemy);
+        Debug.Log("Pøídám v seznamu");
+      
+
+    }
+    public void RemoveAttackList(EnemyHP enemy)
     {
-        Debug.Log("Vypis enterTrigger");
+        Enemies.Remove(enemy);
+        Debug.Log("Odebrán v seznamu");
+
+
+
     }
-    public void Attack() {
-
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
-
-        GameObject closestN = null;
-        float closestRange = Mathf.Infinity;
-
-        for (int i = 0; i < hitColliders.Length; i++)
+    public virtual void Attacks()
+    {
+       if(Enemies.Count > 0 && timeToFire <=0)
         {
 
-            Collider collider = hitColliders[i];
-            if (collider.gameObject.transform.root.gameObject.GetComponent<EnemyHP>() != null)
+
+            for(int i = 0; i < Enemies.Count; i++)
             {
-
-                Vector3 poziceNepriatele = collider.transform.position;
-
-                float vzdalenost = Vector3.Distance(transform.position, poziceNepriatele);
-
-                if (vzdalenost < closestRange)
+                if (Enemies[i] == null)
                 {
-                    closestN = collider.gameObject;
-                    closestRange = vzdalenost;
+                    Enemies.RemoveAt(i);
                 }
             }
+            timeToFire = fire_Rate;
+            Enemies[0].DooDamage(damage);
         }
-
-        if (closestN != null)
-        {
-            RotateHeadofTower.LookAt(closestN.gameObject.transform.root.gameObject.transform);
-            closestN.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DoDamage(damage);
-        }
-
     }
-   public void Sell() 
+    public void Sell() 
     {
         Money.Instance.Add((int)Math.Round((currentPrice / 100) * 60)); // 60 % of full price
         Destroy(gameObject);

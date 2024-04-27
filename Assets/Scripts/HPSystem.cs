@@ -17,7 +17,7 @@ public class HPSystem : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            Debug.Log("HP pod nulu");
+            Destroy(gameObject);
         }
         else
         {
