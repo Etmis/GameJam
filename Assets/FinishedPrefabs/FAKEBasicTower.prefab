@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 1662080303747480835}
   - component: {fileID: -5595398245513571711}
   m_Layer: 8
-  m_Name: BasicTower
+  m_Name: FAKEBasicTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

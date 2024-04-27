@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 7392591223074898389}
   - component: {fileID: 7973626580863921044}
   m_Layer: 8
-  m_Name: Beam_tower
+  m_Name: FAKEBeam_tower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
