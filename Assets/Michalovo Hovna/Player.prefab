@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 5762814023080380699}
   - component: {fileID: 5762814023080380697}
   - component: {fileID: 5762814023080380698}
-  - component: {fileID: 136215276336837245}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -100,22 +99,6 @@ MonoBehaviour:
   jumpForce: 5
   playerCamera: {fileID: 5762814023179280759}
   groundChecker: {fileID: 5762814022506639968}
---- !u!114 &136215276336837245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5762814023080380676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2be1d5dae2e95b49802fc94be2c86e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerHolder: {fileID: 0}
-  buildPanel: {fileID: 0}
-  towerky:
-  - {fileID: 1686244564012178689, guid: 0b2d227bf7b25fe4e88c254de267ee61, type: 3}
 --- !u!1 &5762814023179280754
 GameObject:
   m_ObjectHideFlags: 0
