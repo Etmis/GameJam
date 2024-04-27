@@ -16,7 +16,18 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agentPoints = new List<Transform>(FindObjectsOfType<Transform>().Where(t => t.name.StartsWith("point")));
+        List<Transform> waypoints = new List<Transform>();
+
+        for (int i = 1; i <= FindObjectsOfType<Transform>().Where(t => t.name.StartsWith("point")).Count(); i++)
+        {
+            Transform waypoint = FindObjectsOfType<Transform>().Where(t => t.name == "point" + i).FirstOrDefault();
+            if (waypoint != null)
+            {
+                waypoints.Add(waypoint);
+            }
+        }
+
+        agentPoints = waypoints;
         SetNextDestination();
     }
 
