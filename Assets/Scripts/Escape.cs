@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +13,10 @@ public class Escape : MonoBehaviour
     [SerializeField] Slider fovSlider;
     [SerializeField] Slider sensSlider;
     [SerializeField] TMPro.TMP_Text tutorialText;
+    
     void Start()
     {
+        
         if(PlayerPrefs.HasKey("sensitivity"))
         {
             LoadSettings();
@@ -33,11 +36,11 @@ public class Escape : MonoBehaviour
             if(escapPaner.activeInHierarchy)
             {
                 escapPaner.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                
                 tutorialText.gameObject.SetActive(true);
-                LoadSettings();
-                Time.timeScale = 1;
+                OutOfMenuContextStuffNeeded();
+               
+                
 
             }
             else
@@ -45,13 +48,9 @@ public class Escape : MonoBehaviour
                 if(!settingsPaner.activeInHierarchy)
                 {
                     escapPaner.SetActive(true);
-                    Cursor.lockState = CursorLockMode.None;
                     tutorialText.gameObject.SetActive(false);
-                    Cursor.visible = true;
-                    PlayerMovement.sensitivity = 0;
-                    Camera.main.fieldOfView = 0;
-                    Time.timeScale = 0;
-
+                    MenuContextStuffNeeded();
+                    
                 }
                 
             }
@@ -84,6 +83,22 @@ public class Escape : MonoBehaviour
         sensSlider.value = sens;
         fovSlider.value = fov;
     }
+    public static void MenuContextStuffNeeded()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PlayerMovement.sensitivity = 0;
+        
+        Time.timeScale = 0;
+    }
+    public void OutOfMenuContextStuffNeeded()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        LoadSettings();
+    }
+
    
     
     
