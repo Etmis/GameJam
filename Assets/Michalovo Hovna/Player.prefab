@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 5762814023080380699}
   - component: {fileID: 5762814023080380697}
   - component: {fileID: 5762814023080380698}
-  - component: {fileID: 5762814023080380696}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -96,34 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1de413137277046b225b2a6580ed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
   baseSpeed: 5
   jumpForce: 5
   playerCamera: {fileID: 5762814023179280759}
   groundChecker: {fileID: 5762814022506639968}
---- !u!114 &5762814023080380696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5762814023080380676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3fd0a2357f8bf4cada5ed9320a1f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
-  firstEnemy: {fileID: 0}
-  secondEnemy: {fileID: 6851011102642460671, guid: 54b2cda89b9f8df45b72047fcdb9f823, type: 3}
-  thirdEnemy: {fileID: 0}
-  fourthEnemy: {fileID: 0}
-  fifthEnemy: {fileID: 0}
-  sixthEnemy: {fileID: 0}
-  seventhEnemy: {fileID: 0}
-  eighthEnemy: {fileID: 0}
-  ninethEnemy: {fileID: 0}
-  tenthEnemy: {fileID: 0}
 --- !u!1 &5762814023179280754
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,8 @@ public class Escape : MonoBehaviour
 {
     [SerializeField]GameObject escapPaner;
     [SerializeField]GameObject settingsPaner;
-    [SerializeField] Slider slider;
+    [SerializeField] Slider fovSlider;
+    [SerializeField] Slider sensSlider;
     void Start()
     {
         
@@ -49,6 +51,11 @@ public class Escape : MonoBehaviour
     }
     public void ChnageFow()
     {
-        Camera.main.fieldOfView = slider.value;
+        Camera.main.fieldOfView = fovSlider.value;
+    }
+    public void ChangeSensitivity()
+    {
+        PlayerMovement.sensitivity = sensSlider.value;
+        
     }
 }
