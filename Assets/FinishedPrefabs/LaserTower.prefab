@@ -244,6 +244,7 @@ LineRenderer:
   m_Positions:
   - {x: 1.122, y: 0.651, z: 0.036}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
