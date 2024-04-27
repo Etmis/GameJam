@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private bool isGrounded = false;
-    [SerializeField] float sensitivity;
+    public static float sensitivity;
     [SerializeField] float baseSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] Transform playerCamera;
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sensitivity = 5;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();

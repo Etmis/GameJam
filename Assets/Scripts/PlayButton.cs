@@ -6,17 +6,23 @@ using UnityEngine.UI;
 public class PlayButton : MonoBehaviour
 {
     [SerializeField]
-    private Animator animator;
+    Animator animator;
 
     [SerializeField]
     WaveManager waveManager;
 
+    private bool alreadyPressed = false;
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (!alreadyPressed)
         {
-            animator.SetTrigger("PlayButton");
-            waveManager.StartWave();
+            if (collision.gameObject.name == "Player")
+            {
+                alreadyPressed = true;
+                animator.SetTrigger("PlayButton");
+                waveManager.StartWave();
+            }
         }
     }
 }
