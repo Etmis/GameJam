@@ -11,6 +11,7 @@ public class Escape : MonoBehaviour
     [SerializeField]GameObject settingsPaner;
     [SerializeField] Slider fovSlider;
     [SerializeField] Slider sensSlider;
+    [SerializeField] TMPro.TMP_Text tutorialText;
     void Start()
     {
         if(PlayerPrefs.HasKey("sensitivity"))
@@ -34,7 +35,9 @@ public class Escape : MonoBehaviour
                 escapPaner.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                tutorialText.gameObject.SetActive(true);
                 LoadSettings();
+                Time.timeScale = 1;
 
             }
             else
@@ -43,9 +46,11 @@ public class Escape : MonoBehaviour
                 {
                     escapPaner.SetActive(true);
                     Cursor.lockState = CursorLockMode.None;
+                    tutorialText.gameObject.SetActive(false);
                     Cursor.visible = true;
                     PlayerMovement.sensitivity = 0;
                     Camera.main.fieldOfView = 0;
+                    Time.timeScale = 0;
 
                 }
                 
@@ -68,7 +73,7 @@ public class Escape : MonoBehaviour
         PlayerPrefs.SetFloat("sensitivity", sensSlider.value);
         PlayerPrefs.SetFloat("FOV", fovSlider.value);
         BackToMenu();
-        LoadSettings();
+        //LoadSettings();
     }
     public void LoadSettings()
     {
