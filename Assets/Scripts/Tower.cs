@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -24,10 +25,11 @@ public class Tower : MonoBehaviour
     protected Transform RotateHeadofTower;
     [SerializeField]
     protected Transform RangeTransform;
-    private float timeToFire;
+    protected float timeToFire;
+   
 
 
-    private List<EnemyHP> Enemies = new List<EnemyHP>();
+    protected List<EnemyHP> Enemies = new List<EnemyHP>();
 
     public void Start()
     {
@@ -49,14 +51,12 @@ public class Tower : MonoBehaviour
    
     public void AddAttackList(EnemyHP enemy) {
         Enemies.Add(enemy);
-        Debug.Log("Pøídám v seznamu");
       
 
     }
     public void RemoveAttackList(EnemyHP enemy)
     {
         Enemies.Remove(enemy);
-        Debug.Log("Odebrán v seznamu");
 
 
 
@@ -65,17 +65,13 @@ public class Tower : MonoBehaviour
     {
        if(Enemies.Count > 0 && timeToFire <=0)
         {
-
-
-            for(int i = 0; i < Enemies.Count; i++)
-            {
-                if (Enemies[i] == null)
-                {
-                    Enemies.RemoveAt(i);
-                }
-            }
+            // laser view
+            
             timeToFire = fire_Rate;
             Enemies[0].DooDamage(damage);
+            if (Enemies[0].currentHP - damage <= 0) {
+                Enemies.RemoveAt(0);
+            }
         }
     }
     public void Sell() 
