@@ -64,6 +64,8 @@ public class Builder : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // input koleèko myši nahoru
         {
+            Destroy(preview);
+            preview = null;
             index++;
             if (index > towers.Count - 1)
             {
@@ -74,6 +76,8 @@ public class Builder : MonoBehaviour
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // input koleèko myši dolù
         {
+            Destroy(preview);
+            preview = null;
             index--;
             if (index < 0)
             {
@@ -90,15 +94,17 @@ public class Builder : MonoBehaviour
         RaycastHit hit;
         bool canSpawn = true;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 5))
         {
+            Debug.Log("negr");
             // Kontrola, zda je na pozici kurzoru myši kolizní objekt
-            Collider[] colliders = Physics.OverlapSphere(hit.point, 2f); // Pravdìpodobnìjší velikost pro vìže
+            Collider[] colliders = Physics.OverlapSphere(hit.point, 2f);
             foreach (Collider collider in colliders)
             {
                 if (collider.CompareTag("Blockator"))
                 {
                     canSpawn = false;
+                    break;
                 }
             }
             if (canSpawn)
@@ -113,13 +119,23 @@ public class Builder : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        int layerMask = LayerMask.GetMask("Tower");
+        if (Physics.Raycast(ray, out hit, 5, ~layerMask))
         {
             parent.transform.position = hit.point;
+
             if (preview == null)
             {
-                preview = Instantiate(fakeTowers[index]);
+                preview = Instantiate(fakeTowers[index], hit.point, Quaternion.identity);
                 preview.transform.SetParent(parent.transform);
+            }
+        }
+        else
+        {
+            if (preview != null)
+            {
+                Destroy(preview);
+                preview = null;
             }
         }
     }
