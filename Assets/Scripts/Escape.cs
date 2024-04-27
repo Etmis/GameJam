@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,15 @@ public class Escape : MonoBehaviour
     [SerializeField] Slider sensSlider;
     void Start()
     {
-        
+        if(PlayerPrefs.HasKey("sensitivity"))
+        {
+            LoadSettings();
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("sensitivity", 5f);
+            PlayerPrefs.SetFloat("FOV", 60);
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +34,8 @@ public class Escape : MonoBehaviour
                 escapPaner.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                LoadSettings();
+
             }
             else
             {
@@ -33,6 +44,9 @@ public class Escape : MonoBehaviour
                     escapPaner.SetActive(true);
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
+                    PlayerMovement.sensitivity = 0;
+                    Camera.main.fieldOfView = 0;
+
                 }
                 
             }
@@ -49,13 +63,31 @@ public class Escape : MonoBehaviour
         escapPaner.SetActive(true);
         settingsPaner.SetActive(false);
     }
-    public void ChnageFow()
+    public void SaveSettings()
     {
-        Camera.main.fieldOfView = fovSlider.value;
+        PlayerPrefs.SetFloat("sensitivity", sensSlider.value);
+        PlayerPrefs.SetFloat("FOV", fovSlider.value);
+        BackToMenu();
+        LoadSettings();
     }
-    public void ChangeSensitivity()
+    public void LoadSettings()
     {
-        PlayerMovement.sensitivity = sensSlider.value;
+        var sens = PlayerPrefs.GetFloat("sensitivity");
+        var fov = PlayerPrefs.GetFloat("FOV");
+        PlayerMovement.sensitivity = sens;
+        Camera.main.fieldOfView = fov;
+        sensSlider.value = sens;
+        fovSlider.value = fov;
+    }
+   
+    
+    
+    
         
-    }
+        
+    
 }
+
+
+
+    
