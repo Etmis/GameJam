@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2634137493958326778}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &5906445920783393945
 LineRenderer:
@@ -160,8 +160,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5617063204882772717}
   - {fileID: 4113245896448297669}
+  - {fileID: 5617063204882772717}
   - {fileID: 5861611030549168814}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -285,7 +285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e5d07a1189f655f458616cf64ae06abe, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5d07a1189f655f458616cf64ae06abe, type: 3}
       propertyPath: m_LocalScale.x
