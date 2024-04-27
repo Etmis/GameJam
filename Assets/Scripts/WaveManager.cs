@@ -25,13 +25,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Wave firstWave = new Wave();
-
-        // Add enemy spawn data for the first wave
-        firstWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 5, cooldown = 2f });
-        firstWave.enemies.Add(new EnemySpawnData { enemyPrefab = secondEnemy, count = 3, cooldown = 1f });
-
-        waves.Add(firstWave);
+        MakeWaves();
     }
 
     // Update is called once per frame
@@ -40,7 +34,7 @@ public class WaveManager : MonoBehaviour
         if (Input.GetButtonDown("Jump") && currentWaveIndex < waves.Count)
         {
             StartWave(waves[currentWaveIndex]);
-            currentWaveIndex++; // Move to the next wave after starting current one
+            currentWaveIndex++;
         }
     }
 
@@ -51,6 +45,7 @@ public class WaveManager : MonoBehaviour
 
     public IEnumerator SpawnEnemies(Wave wave)
     {
+        yield return new WaitForSeconds(10);
         foreach (EnemySpawnData spawnData in wave.enemies)
         {
             for (int i = 0; i < spawnData.count; i++)
@@ -60,14 +55,26 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
+
+    private void MakeWaves()
+    {
+        Wave firstWave = new Wave();
+        firstWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 5, cooldown = 2f });
+        waves.Add(firstWave);
+        //----------------------------------
+        Wave secondWave = new Wave();
+        secondWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 5, cooldown = 2f });
+        secondWave.enemies.Add(new EnemySpawnData { enemyPrefab = secondEnemy, count = 3, cooldown = 1f });
+        waves.Add(secondWave);
+    }
 }
 
-public class Wave // Defines a single wave configuration
+public class Wave
 {
     public List<EnemySpawnData> enemies = new List<EnemySpawnData>();
 }
 
-public class EnemySpawnData // Defines data for spawning a specific enemy type
+public class EnemySpawnData
 {
     public GameObject enemyPrefab;
     public int count;
