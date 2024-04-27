@@ -21,19 +21,18 @@ public class Tower : MonoBehaviour
     [SerializeField]
     protected int upgradePrice;
     protected float currentPrice;
-   // [SerializeField]
-   // protected Transform RotateHeadofTower;
+   
     [SerializeField]
     protected Transform RangeTransform;
     protected float timeToFire;
-   
 
 
-    protected List<EnemyHP> Enemies = new List<EnemyHP>();
+
+    protected GameObject closestN = null;
 
     public void Start()
     {
-        RangeTransform.localScale = new Vector3(range/2,0.001f,range/2);
+        RangeTransform.localScale = new Vector3(range,0.001f,range);
     }
     public void Upgrade() 
     {
@@ -45,38 +44,53 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
+
         timeToFire -= Time.deltaTime;
+        if (timeToFire < 0) { 
         Attacks();
-    }
-   
-    public void AddAttackList(EnemyHP enemy) {
-        Enemies.Add(enemy);
-      
-
-    }
-    public void RemoveAttackList(EnemyHP enemy)
-    {
-        Enemies.Remove(enemy);
-
-
-
-    }
-    public virtual void Attacks()
-    {
-       if(Enemies.Count > 0 && timeToFire <=0)
-        {
-            // laser view
-            
-            timeToFire = fire_Rate;
-            Enemies[0].DooDamage(damage);
-            if (Enemies[0].currentHP - damage <= 0) {
-                Enemies.RemoveAt(0);
-            }
         }
     }
+   
+
+    
+    public virtual void Attacks()
+    {
+        
+        timeToFire = fire_Rate;
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
+
+         closestN = null;
+        float closestRange = Mathf.Infinity;
+
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+
+            Collider collider = hitColliders[i];
+            if (collider.gameObject.transform.root.gameObject.GetComponent<EnemyHP>() != null)
+            {
+                Vector3 poziceNepriatele = collider.transform.position;
+
+                float vzdalenost = Vector3.Distance(transform.position, poziceNepriatele);
+
+                if (vzdalenost < closestRange)
+                {
+                    closestN = collider.gameObject;
+                    closestRange = vzdalenost;
+                }
+            }
+        }
+
+        if (closestN != null)
+        {
+           // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
+            closestN.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
+        }
+    }
+
     public void Sell() 
     {
         Money.Instance.Add((int)Math.Round((currentPrice / 100) * 60)); // 60 % of full price
         Destroy(gameObject);
     }
 }
+
