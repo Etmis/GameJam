@@ -21,11 +21,16 @@ public class Escape : MonoBehaviour
             if(escapPaner.activeInHierarchy)
             {
                 escapPaner.SetActive(false);
-            }else
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
             {
                 if(!settingsPaner.activeInHierarchy)
                 {
                     escapPaner.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                 }
                 
             }
