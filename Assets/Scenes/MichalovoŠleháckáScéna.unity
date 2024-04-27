@@ -290,6 +290,37 @@ Transform:
   m_Father: {fileID: 422613024}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1249409472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249409473}
+  m_Layer: 0
+  m_Name: Builder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1249409473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249409472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649412698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,11 +412,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers:
-  - {fileID: 1686244564012178689, guid: 0b2d227bf7b25fe4e88c254de267ee61, type: 3}
-  - {fileID: 1686244564012178689, guid: 0b2d227bf7b25fe4e88c254de267ee61, type: 3}
-  - {fileID: 1686244564012178689, guid: 0b2d227bf7b25fe4e88c254de267ee61, type: 3}
-  - {fileID: 1686244564012178689, guid: 0b2d227bf7b25fe4e88c254de267ee61, type: 3}
-  fakeTowers: []
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  fakeTowers:
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  - {fileID: 7170013911384306193, guid: 6d3a11abf30fde243b21063285d5eb6f, type: 3}
+  parent: {fileID: 1249409472}
 --- !u!1 &1788292043
 GameObject:
   m_ObjectHideFlags: 0

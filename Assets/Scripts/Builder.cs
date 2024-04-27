@@ -13,6 +13,9 @@ public class Builder : MonoBehaviour
     [SerializeField]
     List<GameObject> fakeTowers = new List<GameObject>();
 
+    [SerializeField]
+    GameObject parent;
+
     private int index = 0;
     private bool builder = false;
     private GameObject currentTower;
@@ -33,11 +36,11 @@ public class Builder : MonoBehaviour
         if (builder)
         {
             Scroll();
+            Preview();
             if (Input.GetButtonDown("Fire1"))
             {
                 InstantiateTowerIfNoCollision();
             }
-            Preview();
         }
     }
 
@@ -112,10 +115,11 @@ public class Builder : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (lastHit.point != hit.point)
+            parent.transform.position = hit.point;
+            if (preview == null)
             {
-                lastHit = hit;
-                preview = Instantiate(currentTower, hit.point, Quaternion.identity);
+                preview = Instantiate(fakeTowers[index]);
+                preview.transform.SetParent(parent.transform);
             }
         }
     }
