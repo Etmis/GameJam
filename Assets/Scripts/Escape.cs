@@ -13,6 +13,7 @@ public class Escape : MonoBehaviour
     [SerializeField] Slider fovSlider;
     [SerializeField] Slider sensSlider;
     [SerializeField] TMPro.TMP_Text tutorialText;
+    [SerializeField] TMPro.TMP_Text CashText;
     public static bool isInSettings;
     
     void Start()
@@ -58,6 +59,7 @@ public class Escape : MonoBehaviour
             }
 
         }
+        CashText.text = "Cash: " + Money.Instance.CurrentMoney.ToString();
     }
     public void GoToSettings()
     {
