@@ -31,15 +31,16 @@ public class Tower : MonoBehaviour
         currentPrice = price;
         RangeTransform.localScale = new Vector3(range,0.001f,range);
     }
-   public void Upgrade()
+   public void Upgrade(int money)
     {
         damage = damage * 0.3f; 
-        currentPrice = price * 0.2f;
+        currentPrice += price * 0.2f;
         fire_Rate = fire_Rate / 1.2f;
         if(coolDown != 0)
         {
             coolDown = coolDown * 1.5f;
         }
+        Money.Instance.Remove(money);
         
     }
 
