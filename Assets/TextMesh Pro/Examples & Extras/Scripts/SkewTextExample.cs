@@ -99,7 +99,8 @@ namespace TMPro.Examples
 
                     vertices = textInfo.meshInfo[materialIndex].vertices;
 
-                    // Compute the baseline mid point for each character
+                    // Compute the
+                    // line mid point for each character
                     Vector3 offsetToMidBaseline = new Vector2((vertices[vertexIndex + 0].x + vertices[vertexIndex + 2].x) / 2, textInfo.characterInfo[i].baseLine);
                     //float offsetY = VertexCurve.Evaluate((float)i / characterCount + loopCount / 50f); // Random.Range(-0.25f, 0.25f);
 

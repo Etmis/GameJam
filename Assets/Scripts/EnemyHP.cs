@@ -15,6 +15,7 @@ public class EnemyHP : HPSystem
 
     private void Start()
     {
+        base.Start();
         normalSpeed = GetComponent<NavMeshAgent>().speed;
         freezeSpeed = GetComponent<NavMeshAgent>().speed / 2;
     }
