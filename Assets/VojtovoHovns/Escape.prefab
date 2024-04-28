@@ -2392,6 +2392,7 @@ MonoBehaviour:
   sensSlider: {fileID: 4758572414226607492}
   tutorialText: {fileID: 9009524435762683124}
   CashText: {fileID: 3794411917824623813}
+  waveText: {fileID: 615695847355211702}
 --- !u!1 &7615287902492618419
 GameObject:
   m_ObjectHideFlags: 0

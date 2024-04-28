@@ -24,28 +24,23 @@ public class Money
 
     private void Start()
     {
-    _money = 0;
-
+        _money = 0;
     }
 
-    
+
     public void ResetMoney()
     {
         _money = 0;
-
     }
-
 
     public void Remove(int value)
     {
         _money -= value;
-
     }
+
     public void Add(int value)
     {
-        
         _money += value;
-
     }
 
 }
