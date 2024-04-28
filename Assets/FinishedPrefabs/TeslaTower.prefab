@@ -525,6 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2634137493958326778}
   - component: {fileID: 1705792717807944816}
+  - component: {fileID: -1524255160826417735}
   m_Layer: 9
   m_Name: TeslaTower
   m_TagString: Untagged
@@ -571,6 +572,20 @@ MonoBehaviour:
   countOfLighting: 2
   LaserPlace: {fileID: 5617063204882772717}
   lineRenderer: {fileID: 5906445920783393945}
+--- !u!136 &-1524255160826417735
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184212382854337094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.57143235
+  m_Height: 4.1906376
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.8474493, z: 0.37940347}
 --- !u!1 &8400422463621425869
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5861611030549168814
 Transform:
   m_ObjectHideFlags: 0

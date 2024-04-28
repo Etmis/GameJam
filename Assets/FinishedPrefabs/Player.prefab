@@ -391,7 +391,7 @@ MonoBehaviour:
   towers:
   - {fileID: 4681734404340949745, guid: c31c7c4ece93470498e829b88cae1425, type: 3}
   - {fileID: 8931264781804949150, guid: 7be14675d66a79d44b2b626d29578dac, type: 3}
-  - {fileID: 8184212382854337094, guid: 623b753d5d62b5d4ab93e55e6da78513, type: 3}
+  - {fileID: 8184212382854337094, guid: d3aaa7ed3ce8e9d44b5a9425a11566e3, type: 3}
   - {fileID: 650052886766609454, guid: 55e0042ee15b8dc4592c9c005b70969f, type: 3}
   fakeTowers:
   - {fileID: 4681734404340949745, guid: 6772600a402c8314d8166de42d049c8a, type: 3}
