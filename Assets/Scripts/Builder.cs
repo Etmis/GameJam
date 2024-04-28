@@ -22,7 +22,7 @@ public class Builder : MonoBehaviour
     GameObject parent;
 
     private int index = 0;
-    private bool builder = false;
+    public static bool builder = false;
     private GameObject currentTower;
     private static GameObject preview;
 
@@ -52,7 +52,7 @@ public class Builder : MonoBehaviour
 
     private void CheckButton()
     {
-        if (Input.GetButtonDown("Builder"))
+        if (Input.GetButtonDown("Builder") && !Escape.isInSettings&& !Upgrader.IsUpgrading)
         {
             if (builder)
             {

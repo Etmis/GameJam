@@ -20,6 +20,7 @@ public class PlayButton : MonoBehaviour
             if (collision.gameObject.name == "Player")
             {
                 alreadyPressed = true;
+                SoundManager.PlaySound("start");
                 animator.SetTrigger("PlayButton");
                 waveManager.StartWave();
             }

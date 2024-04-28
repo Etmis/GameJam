@@ -15,7 +15,6 @@ public class TeslaTower : Tower
     List<GameObject> enemies = new List<GameObject>();
     public override void Attacks()
     {
-        Debug.Log("vOLÁM OVERLAY");
         timeToFire = fire_Rate;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
@@ -34,7 +33,7 @@ public class TeslaTower : Tower
 
                 if (vzdalenost < closestRange)
                 {
-                    closestN = collider.gameObject;
+                    closestN = collider.gameObject.transform.root.gameObject;
                     closestRange = vzdalenost;
                 }
             }
@@ -42,11 +41,10 @@ public class TeslaTower : Tower
 
         if (closestN != null)
         {
-            lineRenderer.SetPosition(1, LaserPlace.transform.position);
-
-            lineRenderer.SetPosition(2, closestN.transform.position);
-            closestN.active = false;
-
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0,LaserPlace.position);
+            lineRenderer.SetPosition(1,closestN.transform.position);
+            closestN.SetActive(false);
             enemies.Add(closestN);
             // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
         //    closestN.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
@@ -57,10 +55,9 @@ public class TeslaTower : Tower
     IEnumerator DrawLineForDuration(GameObject closest)
     {
 
-        lineRenderer.enabled = true;
-        lineRenderer.startWidth = 1f;
-        lineRenderer.SetPosition(1, closest.transform.position);
+    
         yield return new WaitForSeconds(1f);
+        lineRenderer.enabled = false;
 
         timeToFire = fire_Rate;
         Collider[] hitColliders = Physics.OverlapSphere(closest.transform.position, range / 2);
@@ -80,7 +77,7 @@ public class TeslaTower : Tower
 
                 if (vzdalenost < closestRange && !enemies.Contains(closest))
                 {
-                    closest = collider.gameObject;
+                    closest = collider.gameObject.transform.root.gameObject;
                     closestRange = vzdalenost;
                 }
             }
@@ -88,34 +85,33 @@ public class TeslaTower : Tower
 
         if (closest != null)
         {
-            lineRenderer.SetPosition(2, closest.transform.position);
-            closest.active = false;
+        
             enemies.Add(closest);
+            closest.SetActive(false);
+
             // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
-       //     closest.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
-      //      lineRenderer.SetPosition(0, LaserPlacestatic.position);
-            StartCoroutine(DrawLineForDuration(closest));
+            //     closest.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
+            //      lineRenderer.SetPosition(0, LaserPlacestatic.position);
+
         }
 
         StartCoroutine(DrawLineForDurationTwo(closest));
-        lineRenderer.enabled = false;
     }
 
     private IEnumerator DrawLineForDurationTwo(GameObject closest)
     {
-        lineRenderer.enabled = true;
-        lineRenderer.startWidth = 1f;
-        lineRenderer.SetPosition(1, closest.transform.position);
+ 
         yield return new WaitForSeconds(1f);
-
         timeToFire = fire_Rate;
-        Collider[] hitColliders = Physics.OverlapSphere(closest.transform.position, range / 2);
+        if(closest != null) { 
+            Collider[] hitColliders = Physics.OverlapSphere(closest.transform.position, range / 2);
+    
 
-        closest = null;
-        float closestRange = Mathf.Infinity;
+            closest = null;
+            float closestRange = Mathf.Infinity;
 
-        for (int i = 0; i < hitColliders.Length; i++)
-        {
+            for (int i = 0; i < hitColliders.Length; i++)
+            {
 
             Collider collider = hitColliders[i];
             if (collider.gameObject.transform.root.gameObject.GetComponent<EnemyHP>() != null)
@@ -126,7 +122,7 @@ public class TeslaTower : Tower
 
                 if (vzdalenost < closestRange && !enemies.Contains(closest))
                 {
-                    closest = collider.gameObject;
+                    closest = collider.gameObject.transform.root.gameObject;
                     closestRange = vzdalenost;
                 }
             }
@@ -135,20 +131,23 @@ public class TeslaTower : Tower
         if (closest != null)
         {
 
-            lineRenderer.SetPosition(2, closest.transform.position);
+            closest.GetComponent<Renderer>();
+                closest.SetActive(false);
 
-            closest.active = false;
-
-            enemies.Add(closest);
+                enemies.Add(closest);
             // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
          //   closest.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
           //  lineRenderer.SetPosition(0, LaserPlacestatic.position);
-            StartCoroutine(DrawLineForDuration(closest));
             for(int i = 0; i < enemies.Count; i++) 
             {
-               // enemies[i].gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
+
+                enemies[i].gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
             }
+            Debug.Log("KOlod DOne Tesla");
             enemies.Clear();
         }
+
+      }
     }
+
 }
