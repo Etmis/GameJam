@@ -16,16 +16,15 @@ public class Builder : MonoBehaviour
     [SerializeField]
     List<Sprite> images = new List<Sprite>();
 
-    [SerializeField] Image img;
+    [SerializeField] public static Image img;
 
     [SerializeField]
     GameObject parent;
 
     private int index = 0;
-    private bool builder = false;
+    public static bool builder = false;
     private GameObject currentTower;
-    private GameObject preview;
-    private RaycastHit lastHit;
+    public static GameObject preview;
 
     // Start is called before the first frame update
     void Start()
@@ -102,22 +101,26 @@ public class Builder : MonoBehaviour
         RaycastHit hit;
         bool canSpawn = true;
         int layerMask = LayerMask.GetMask("FakeTower");
-        if (Physics.Raycast(ray, out hit, 5, ~layerMask))
+        if (Money.Instance.CurrentMoney >= currentTower.GetComponent<Tower>().price)
         {
-            Collider[] colliders = Physics.OverlapSphere(hit.point, 2f);
-            foreach (Collider collider in colliders)
+            if (Physics.Raycast(ray, out hit, 5, ~layerMask))
             {
-                if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
+                Collider[] colliders = Physics.OverlapSphere(hit.point, 2f);
+                foreach (Collider collider in colliders)
                 {
-                    canSpawn = false;
-                    break;
+                    if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
+                    {
+                        canSpawn = false;
+                        break;
+                    }
                 }
+                if (canSpawn)
+                {
+                    Money.Instance.Remove(currentTower.GetComponent<Tower>().price);
+                    Instantiate(currentTower, hit.point, Quaternion.identity);
+                }
+                canSpawn = true;
             }
-            if (canSpawn)
-            {
-                Instantiate(currentTower, hit.point, Quaternion.identity);
-            }
-            canSpawn = true;
         }
     }
 

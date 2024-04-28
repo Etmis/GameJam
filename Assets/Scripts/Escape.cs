@@ -14,7 +14,10 @@ public class Escape : MonoBehaviour
     [SerializeField] Slider sensSlider;
     [SerializeField] TMPro.TMP_Text tutorialText;
     [SerializeField] TMPro.TMP_Text CashText;
-    public static bool isInSettings;
+    [SerializeField]TMPro.TMP_Text waveText;
+    public static int WaveCount;
+    
+
     
     void Start()
     {
@@ -41,25 +44,24 @@ public class Escape : MonoBehaviour
                 
                 tutorialText.gameObject.SetActive(true);
                 OutOfMenuContextStuffNeeded();
-                isInSettings = false;
-                
-
+               
             }
-            else
+            else if (!settingsPaner.activeInHierarchy)
             {
-                if(!settingsPaner.activeInHierarchy)
-                {
-                    escapPaner.SetActive(true);
-                    tutorialText.gameObject.SetActive(false);
-                    MenuContextStuffNeeded();
-                    isInSettings=true;
-                    
-                }
+                escapPaner.SetActive(true);
+                tutorialText.gameObject.SetActive(false);
+                MenuContextStuffNeeded();
                 
+                if (Builder.builder)
+                {
+                    Builder.builder = false;
+                    Destroy(Builder.preview);
+                    Builder.img.gameObject.SetActive(false);
+                }
             }
-
         }
         CashText.text = "Cash: " + Money.Instance.CurrentMoney.ToString();
+        waveText.text = "Wave: " + WaveCount.ToString();    
     }
     public void GoToSettings()
     {
