@@ -32,12 +32,14 @@ public class Upgrader : MonoBehaviour
             if (Physics.Raycast(ray, out hitInfo, 5))
             {
 
-                var nig = hitInfo.transform.GetComponent<Tower>();
+                var nig = hitInfo.transform.root.gameObject.GetComponent<Tower>();
                 if (nig != null)
                 {
                     if(!Escape.isInSettings && !Builder.builder)
                     {
                         currentTower = nig;
+                        Debug.Log(nig);
+
                         Aktivuj();
                         
                     }
