@@ -12,7 +12,6 @@ public class IceTower : Tower
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
         closestN = null;
-        float closestRange = Mathf.Infinity;
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
