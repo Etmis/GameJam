@@ -13,6 +13,7 @@ public class Upgrader : MonoBehaviour
 
     public static bool IsUpgrading;
     bool readyToSell;
+    bool readyToUpgrade;    
     Tower currentTower;
     
     void Start()
@@ -65,6 +66,7 @@ public class Upgrader : MonoBehaviour
         sellImage.sprite = sprity[2];
         IsUpgrading = false;
         readyToSell = false;
+        readyToUpgrade = false;
         
     }
     void Aktivuj()
@@ -91,6 +93,25 @@ public class Upgrader : MonoBehaviour
         {
             readyToSell = true;
             sellImage.sprite = sprity[3];
+
+        }
+    }
+    public void UpgradniTo()
+    {
+
+        if (readyToUpgrade)
+        {
+            currentTower.Upgrade();
+            upgradeImage.sprite = sprity[0];
+
+            Return();
+
+
+        }
+        else
+        {
+            readyToUpgrade = true;
+            upgradeImage.sprite = sprity[3];
 
         }
     }
