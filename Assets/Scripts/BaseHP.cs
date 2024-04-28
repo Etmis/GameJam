@@ -11,6 +11,8 @@ public class BaseHP : HPSystem
 
             if (base.currentHP - other.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().currentHP <= 0)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene("Menu");
             }
             DoDamage(other.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().currentHP);
