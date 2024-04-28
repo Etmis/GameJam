@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c424f0a18cdd75a41873f58e73c734c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 300
   currentHP: 0
   MoneyForKill: 0

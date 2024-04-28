@@ -27,6 +27,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         MakeWaves();
+        Money.Instance.OnstartMoney();
     }
 
     // Update is called once per frame

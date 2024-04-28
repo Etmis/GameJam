@@ -29,7 +29,6 @@ public class Builder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Money.Instance.Add(10000);
         currentTower = towers[0];
     }
 

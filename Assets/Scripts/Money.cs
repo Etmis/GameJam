@@ -26,7 +26,10 @@ public class Money
     {
        
     }
-
+    public void OnstartMoney()
+    {
+        _money = 300;
+    }
 
     public void ResetMoney()
     {
