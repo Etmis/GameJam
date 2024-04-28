@@ -13,6 +13,8 @@ public class BasicTower : Tower
         base.Attacks();
         if (closestN != null)
         {
+            SoundManager.PlaySound("bulletTower", base.audioSource);
+
             RotateHeadofTower.LookAt(closestN.gameObject.transform.root.gameObject.transform);
         }
     }

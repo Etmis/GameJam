@@ -22,6 +22,7 @@ public class Tower : MonoBehaviour
     protected Transform RangeTransform;
     protected float timeToFire;
 
+    protected AudioSource audioSource;
 
 
     protected GameObject closestN = null;
@@ -30,6 +31,7 @@ public class Tower : MonoBehaviour
     {
         currentPrice = price;
         RangeTransform.localScale = new Vector3(range,0.001f,range);
+        audioSource = GetComponent<AudioSource>();
     }
    public bool IsPossbileToUpgrade()
     {
