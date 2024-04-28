@@ -17,7 +17,7 @@ public class Tower : MonoBehaviour
     protected float coolDown;
     [SerializeField]
     public int price;
-    protected float currentPrice;
+    public float currentPrice;
     [SerializeField]
     protected Transform RangeTransform;
     protected float timeToFire;
