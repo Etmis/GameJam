@@ -33,6 +33,7 @@ public class EnemyHP : HPSystem
     {
        
         StartCoroutine(freezing(coolDown));
+        StopCoroutine(freezing(coolDown));
     }
 
     IEnumerator freezing(float coolDown)
