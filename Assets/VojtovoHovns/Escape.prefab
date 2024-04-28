@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -288, y: -167}
+  m_AnchoredPosition: {x: -288, y: -121}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7765766381898162013
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "E - Build \nESC - MENU\n"
+  m_text: "E - Build \nESC - MENU\nF - Upgrade\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c313e984ba4bfaa4e9c56ae2f21564f8, type: 2}
   m_sharedMaterial: {fileID: 8710989252454634289, guid: c313e984ba4bfaa4e9c56ae2f21564f8, type: 2}
@@ -2332,7 +2332,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &7615287902134300521
 MonoBehaviour:
