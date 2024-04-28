@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class Money : MonoBehaviour
+public class Money
 {
     private static Money instance;
     //prefs Money
@@ -24,28 +24,23 @@ public class Money : MonoBehaviour
 
     private void Start()
     {
-    _money = 0;
-
+        _money = 0;
     }
 
-    
+
     public void ResetMoney()
     {
         _money = 0;
-
     }
-
 
     public void Remove(int value)
     {
         _money -= value;
-
     }
+
     public void Add(int value)
     {
-        
         _money += value;
-
     }
 
 }

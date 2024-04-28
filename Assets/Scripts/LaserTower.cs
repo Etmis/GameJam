@@ -16,7 +16,7 @@ public class LaserTower : Tower
         base.Attacks();
         if (closestN != null)
         {
-
+            lineRenderer.positionCount = 3;
             lineRenderer.SetPosition(0, LaserPlacestatic.position);
             StartCoroutine(DrawLineForDuration());
             StopCoroutine(DrawLineForDuration());
