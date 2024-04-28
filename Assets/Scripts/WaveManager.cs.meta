@@ -3,7 +3,18 @@ guid: 5e3fd0a2357f8bf4cada5ed9320a1f94
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnPoint: {instanceID: 0}
+  - firstEnemy: {instanceID: 0}
+  - secondEnemy: {instanceID: 0}
+  - thirdEnemy: {instanceID: 0}
+  - fourthEnemy: {instanceID: 0}
+  - fifthEnemy: {instanceID: 0}
+  - sixthEnemy: {instanceID: 0}
+  - seventhEnemy: {instanceID: 0}
+  - eighthEnemy: {instanceID: 0}
+  - ninethEnemy: {instanceID: 0}
+  - tenthEnemy: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -17,6 +17,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject eighthEnemy;
     [SerializeField] GameObject ninethEnemy;
     [SerializeField] GameObject tenthEnemy;
+    [SerializeField] GameObject eleventhEnemy;
 
     public List<Wave> waves = new List<Wave>();
 
@@ -301,8 +302,7 @@ public class WaveManager : MonoBehaviour
         waves.Add(fortyNinthWave);
         //----------------------------------//
         Wave fiftiethWave = new Wave();
-        fiftiethWave.enemies.Add(new EnemySpawnData { enemyPrefab = ninethEnemy, count = 10, cooldown = 2.5f });
-        fiftiethWave.enemies.Add(new EnemySpawnData { enemyPrefab = tenthEnemy, count = 2, cooldown = 6f });
+        fiftiethWave.enemies.Add(new EnemySpawnData { enemyPrefab = eleventhEnemy, count = 1, cooldown = 1f });
         waves.Add(fiftiethWave);
         //----------------------------------//
     }
