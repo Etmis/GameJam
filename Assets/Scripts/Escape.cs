@@ -51,7 +51,6 @@ public class Escape : MonoBehaviour
                 escapPaner.SetActive(true);
                 tutorialText.gameObject.SetActive(false);
                 MenuContextStuffNeeded();
-                
                 if (Builder.builder)
                 {
                     Builder.builder = false;

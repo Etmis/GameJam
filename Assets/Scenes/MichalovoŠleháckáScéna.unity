@@ -254,6 +254,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454264170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 615695847355211702, guid: ac688dec4b74d95499e0e7dbdb009e28, type: 3}
+  m_PrefabInstance: {fileID: 1270931305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641374431
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +440,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7615287902134300522, guid: ac688dec4b74d95499e0e7dbdb009e28, type: 3}
+      propertyPath: waveText
+      value: 
+      objectReference: {fileID: 454264170}
     - target: {fileID: 7615287902134300523, guid: ac688dec4b74d95499e0e7dbdb009e28, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -531,7 +546,7 @@ GameObject:
   - component: {fileID: 1433688425}
   - component: {fileID: 1433688424}
   m_Layer: 6
-  m_Name: Image
+  m_Name: PreviewImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,11 +800,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towers:
   - {fileID: 4681734404340949745, guid: c31c7c4ece93470498e829b88cae1425, type: 3}
-  - {fileID: 7916222174325414767, guid: 1d7483ebf6c0aba45aee57c2881d0908, type: 3}
   - {fileID: 8931264781804949150, guid: 7be14675d66a79d44b2b626d29578dac, type: 3}
   fakeTowers:
   - {fileID: 4681734404340949745, guid: 27ae2fa171e24cf47ad961f407306b52, type: 3}
-  - {fileID: 7916222174325414767, guid: 857357df42f649f40a66c2e19669829a, type: 3}
   - {fileID: 8931264781804949150, guid: 036f89e0a9726a045b0aaedc62c0cd7c, type: 3}
   images:
   - {fileID: 21300000, guid: 7b6bde0b1d2c3514ea6df271c25997b5, type: 3}

@@ -16,7 +16,8 @@ public class Builder : MonoBehaviour
     [SerializeField]
     List<Sprite> images = new List<Sprite>();
 
-    [SerializeField] public static Image img;
+    [SerializeField]
+    Image img;
 
     [SerializeField]
     GameObject parent;
