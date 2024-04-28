@@ -11,6 +11,8 @@ public class LaserTower : Tower
     [SerializeField]
     protected LineRenderer lineRenderer;
   
+
+    
     public override void Attacks()
     {
         base.Attacks();
@@ -28,7 +30,7 @@ public class LaserTower : Tower
     IEnumerator DrawLineForDuration()
     {
         // laser view
-
+        SoundManager.PlaySound("laserTower",audioSource);
         lineRenderer.enabled = true;
         lineRenderer.startWidth = 1f;
         lineRenderer.SetPosition(1, LaserPlace.position);

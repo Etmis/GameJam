@@ -44,7 +44,7 @@ public class WaveManager : MonoBehaviour
     {
         foreach (Wave wave in waves)
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(8f);
             foreach (EnemySpawnData spawnData in wave.enemies)
             {
                 for (int i = 0; i < spawnData.count; i++)

@@ -41,10 +41,8 @@ public class TeslaTower : Tower
 
         if (closestN != null)
         {
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0,LaserPlace.position);
-            lineRenderer.SetPosition(1,closestN.transform.position);
-            closestN.SetActive(false);
+            SoundManager.PlaySound("teslaTower", base.audioSource);
+            lineRenderer.enabled = false;
             enemies.Add(closestN);
             // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
         //    closestN.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
@@ -58,7 +56,7 @@ public class TeslaTower : Tower
     
         yield return new WaitForSeconds(1f);
         lineRenderer.enabled = false;
-
+        if(closest != null) { 
         timeToFire = fire_Rate;
         Collider[] hitColliders = Physics.OverlapSphere(closest.transform.position, range / 2);
 
@@ -87,7 +85,6 @@ public class TeslaTower : Tower
         {
         
             enemies.Add(closest);
-            closest.SetActive(false);
 
             // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
             //     closest.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
@@ -96,6 +93,7 @@ public class TeslaTower : Tower
         }
 
         StartCoroutine(DrawLineForDurationTwo(closest));
+        }
     }
 
     private IEnumerator DrawLineForDurationTwo(GameObject closest)
@@ -132,7 +130,6 @@ public class TeslaTower : Tower
         {
 
             closest.GetComponent<Renderer>();
-                closest.SetActive(false);
 
                 enemies.Add(closest);
             // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
@@ -140,7 +137,7 @@ public class TeslaTower : Tower
           //  lineRenderer.SetPosition(0, LaserPlacestatic.position);
             for(int i = 0; i < enemies.Count; i++) 
             {
-
+                    if (enemies[i] != null)
                 enemies[i].gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
             }
             Debug.Log("KOlod DOne Tesla");
