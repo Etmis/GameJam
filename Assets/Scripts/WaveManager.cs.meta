@@ -3,7 +3,19 @@ guid: 5e3fd0a2357f8bf4cada5ed9320a1f94
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnPoint: {instanceID: 0}
+  - firstEnemy: {fileID: 898558106319833434, guid: 16baf1f71ccb83a44bd4317c981b3a8b, type: 3}
+  - secondEnemy: {fileID: 898558106319833434, guid: 9c1b9fa6a86327c49b1f6bc4448ef900, type: 3}
+  - thirdEnemy: {fileID: 898558106319833434, guid: 72dd162f92e94974280422f928ec0f35, type: 3}
+  - fourthEnemy: {fileID: 898558106319833434, guid: c8d662f8d011be14aa149e82a7777dd1, type: 3}
+  - fifthEnemy: {fileID: 898558106319833434, guid: 1113ae48c1bc8d748b3d99d3cc9d0a08, type: 3}
+  - sixthEnemy: {fileID: 898558106319833434, guid: 1f7054c1e17461c4e8257cd22a6edf8b, type: 3}
+  - seventhEnemy: {fileID: 898558106319833434, guid: 91f9818d1833e96488e6cfbb96497069, type: 3}
+  - eighthEnemy: {fileID: 898558106319833434, guid: 17a59ddf9023b624fac2ce77b117d9e0, type: 3}
+  - ninethEnemy: {fileID: 898558106319833434, guid: c17d25f71e5450d4dbba7622303f1c2f, type: 3}
+  - tenthEnemy: {fileID: 898558106319833434, guid: b9f975f6f84b6d143947710e284effed, type: 3}
+  - eleventhEnemy: {fileID: 898558106319833434, guid: c7c45041284b5084baccb02cbba4e3ff, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
