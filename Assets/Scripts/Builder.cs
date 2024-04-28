@@ -122,7 +122,7 @@ public class Builder : MonoBehaviour
                 {
                     Debug.Log("r");
                     Money.Instance.Remove(currentTower.GetComponent<Tower>().price);
-                    Instantiate(currentTower, hit.point, Quaternion.identity);
+                    Instantiate(towers[index], hit.point, Quaternion.identity);
                 }
                 canSpawn = true;
             }
