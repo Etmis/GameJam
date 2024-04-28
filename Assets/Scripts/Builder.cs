@@ -29,6 +29,7 @@ public class Builder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Money.Instance.Add(10000);
         currentTower = towers[0];
     }
 
@@ -45,8 +46,8 @@ public class Builder : MonoBehaviour
             {
                 InstantiateTowerIfNoCollision();
             }
+            img.sprite = images[index];
         }
-        img.sprite = images[index];
     }
 
     private void CheckButton()
