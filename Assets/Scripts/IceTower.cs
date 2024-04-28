@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class IceTower : Tower
@@ -12,6 +13,11 @@ public class IceTower : Tower
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
         closestN = null;
+        if (hitColliders != null && hitColliders[0].GetComponent<EnemyHP>())
+        {
+            SoundManager.PlaySound("iceTower", base.audioSource);
+
+        }
 
         for (int i = 0; i < hitColliders.Length; i++)
         {

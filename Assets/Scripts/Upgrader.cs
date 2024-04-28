@@ -86,7 +86,7 @@ public class Upgrader : MonoBehaviour
         {
             currentTower.Sell();
             sellImage.sprite = sprity[2];
-            
+            SoundManager.PlaySound("sellTower");
             Return();
 
 
@@ -110,6 +110,7 @@ public class Upgrader : MonoBehaviour
             }
             else
             {
+                SoundManager.PlaySound("upgrade");
                 Return();
                 
             }

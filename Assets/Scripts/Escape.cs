@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Escape : MonoBehaviour
@@ -104,6 +105,10 @@ public class Escape : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         LoadSettings();
+    }
+    public void ExitGame()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
    
