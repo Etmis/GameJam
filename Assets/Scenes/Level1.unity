@@ -9284,6 +9284,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405256, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
   m_PrefabInstance: {fileID: 784827695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &787993490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 787993493}
+  - component: {fileID: 787993492}
+  - component: {fileID: 787993491}
+  m_Layer: 0
+  m_Name: EndCollsion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &787993491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787993490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ea7b7ee7d02bb46a64a82d177f279a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1
+  currentHP: 0
+--- !u!65 &787993492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787993490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.328068, y: 4.031481, z: 7.7708282}
+  m_Center: {x: 0.9853649, y: 1.5157404, z: -3.7051964}
+--- !u!4 &787993493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787993490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.1, y: -0.13327718, z: -38.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &791936314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17827,6 +17887,7 @@ MonoBehaviour:
   eighthEnemy: {fileID: 6851011102642460671, guid: 54b2cda89b9f8df45b72047fcdb9f823, type: 3}
   ninethEnemy: {fileID: 6851011102642460671, guid: 54b2cda89b9f8df45b72047fcdb9f823, type: 3}
   tenthEnemy: {fileID: 6851011102642460671, guid: 54b2cda89b9f8df45b72047fcdb9f823, type: 3}
+  eleventhEnemy: {fileID: 0}
 --- !u!4 &1540455954
 Transform:
   m_ObjectHideFlags: 0

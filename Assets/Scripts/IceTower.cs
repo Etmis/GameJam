@@ -15,6 +15,7 @@ public class IceTower : Tower
         closestN = null;
         if (hitColliders != null && hitColliders[0].GetComponent<EnemyHP>())
         {
+            Debug.Log("dìlej");
             SoundManager.PlaySound("iceTower", base.audioSource);
 
         }
