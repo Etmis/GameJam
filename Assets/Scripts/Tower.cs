@@ -17,7 +17,7 @@ public class Tower : MonoBehaviour
     protected float coolDown;
     [SerializeField]
     public int price;
-    protected float currentPrice;
+    public float currentPrice;
     [SerializeField]
     protected Transform RangeTransform;
     protected float timeToFire;
@@ -31,8 +31,10 @@ public class Tower : MonoBehaviour
         currentPrice = price;
         RangeTransform.localScale = new Vector3(range,0.001f,range);
     }
-   public void Upgrade(int money)
+   public bool IsPossbileToUpgrade()
     {
+        if(Money.Instance.CurrentMoney >= (currentPrice + (currentPrice * 0.3f))) 
+        { 
         damage = damage * 0.3f; 
         currentPrice += price * 0.2f;
         fire_Rate = fire_Rate / 1.2f;
@@ -40,8 +42,11 @@ public class Tower : MonoBehaviour
         {
             coolDown = coolDown * 1.5f;
         }
-        Money.Instance.Remove(money);
-        
+        Money.Instance.Remove((int)(currentPrice + (currentPrice * 0.3f)));
+            return true;
+        }else {
+        return false;
+        }
     }
 
     private void Update()

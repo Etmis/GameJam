@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,12 +31,14 @@ public class Upgrader : MonoBehaviour
             if (Physics.Raycast(ray, out hitInfo, 5))
             {
 
-                var nig = hitInfo.transform.GetComponent<Tower>();
+                var nig = hitInfo.transform.root.gameObject.GetComponent<Tower>();
                 if (nig != null)
                 {
                     if(!Escape.isInSettings && !Builder.builder)
                     {
                         currentTower = nig;
+                        Debug.Log(nig);
+
                         Aktivuj();
                         
                     }
@@ -64,6 +65,7 @@ public class Upgrader : MonoBehaviour
             PlayerMovement.sensitivity = 5;
         }
         sellImage.sprite = sprity[2];
+        upgradeImage.sprite = sprity[0];
         IsUpgrading = false;
         readyToSell = false;
         readyToUpgrade = false;
@@ -101,10 +103,19 @@ public class Upgrader : MonoBehaviour
 
         if (readyToUpgrade)
         {
-            currentTower.Upgrade();
-            upgradeImage.sprite = sprity[0];
+            var nigg = currentTower.IsPossbileToUpgrade();
+            if (!nigg)
+            {
 
-            Return();
+            }
+            else
+            {
+                Return();
+                
+            }
+            
+
+            
 
 
         }
