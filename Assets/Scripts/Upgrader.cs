@@ -64,6 +64,7 @@ public class Upgrader : MonoBehaviour
             PlayerMovement.sensitivity = 5;
         }
         sellImage.sprite = sprity[2];
+        upgradeImage.sprite = sprity[0];
         IsUpgrading = false;
         readyToSell = false;
         readyToUpgrade = false;
@@ -101,10 +102,19 @@ public class Upgrader : MonoBehaviour
 
         if (readyToUpgrade)
         {
-            currentTower.Upgrade();
-            upgradeImage.sprite = sprity[0];
+            var nigg = currentTower.IsPossbileToUpgrade();
+            if (!nigg)
+            {
 
-            Return();
+            }
+            else
+            {
+                Return();
+                
+            }
+            
+
+            
 
 
         }
