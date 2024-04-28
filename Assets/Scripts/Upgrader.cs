@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Upgrader : MonoBehaviour
 {
     [SerializeField] GameObject paner;
+    [SerializeField] List<Sprite> sprity;
+    [SerializeField] Image sellImage;
+    [SerializeField] Image upgradeImage;
+
     public static bool IsUpgrading;
+    bool readyToSell;
+    Tower currentTower;
+    
     void Start()
     {
         
@@ -28,6 +36,7 @@ public class Upgrader : MonoBehaviour
                 {
                     if(!Escape.isInSettings && !Builder.builder)
                     {
+                        currentTower = nig;
                         Aktivuj();
                         
                     }
@@ -53,7 +62,9 @@ public class Upgrader : MonoBehaviour
         {
             PlayerMovement.sensitivity = 5;
         }
+        sellImage.sprite = sprity[2];
         IsUpgrading = false;
+        readyToSell = false;
         
     }
     void Aktivuj()
@@ -64,6 +75,24 @@ public class Upgrader : MonoBehaviour
         Time.timeScale = 0;
         PlayerMovement.sensitivity = 0;
         IsUpgrading = true;
+    }
+    public void ProdejTO()
+    {
+        if(readyToSell)
+        {
+            currentTower.Sell();
+            sellImage.sprite = sprity[2];
+            
+            Return();
+
+
+        }
+        else
+        {
+            readyToSell = true;
+            sellImage.sprite = sprity[3];
+
+        }
     }
 
    
