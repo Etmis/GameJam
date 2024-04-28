@@ -9,9 +9,10 @@ public class HPSystem : MonoBehaviour
 
     public float currentHP; // jeho aktuální
 
-    private void Start()
+    public void Start()
     {
         currentHP = maxHP;
+      
     }
     protected void DoDamage(float damage)
     {

@@ -22,7 +22,7 @@ public class Builder : MonoBehaviour
     GameObject parent;
 
     private int index = 0;
-    private bool builder = false;
+    public static bool builder = false;
     private GameObject currentTower;
     private static GameObject preview;
 
@@ -52,13 +52,14 @@ public class Builder : MonoBehaviour
 
     private void CheckButton()
     {
-        if (Input.GetButtonDown("Builder"))
+        if (Input.GetButtonDown("Builder") && !Escape.isInSettings&& !Upgrader.IsUpgrading)
         {
             if (builder)
             {
                 builder = false;
                 currentTower = towers[0];
                 img.gameObject.SetActive(false);
+                Destroy(preview);
             }
             else if (!builder)
             {
@@ -112,11 +113,11 @@ public class Builder : MonoBehaviour
                 foreach (Collider collider in colliders)
                 {
                     Debug.Log("e");
-                    /*if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
+                    if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
                     {
                         Debug.Log("g");
                         canSpawn = false;
-                    }*/
+                    }
                 }
                 if (canSpawn)
                 {

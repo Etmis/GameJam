@@ -24,7 +24,7 @@ public class Money
 
     private void Start()
     {
-        _money = 0;
+       
     }
 
 

@@ -197,7 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c424f0a18cdd75a41873f58e73c734c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  maxHP: 100
+  currentHP: 0
   MoneyForKill: 50
 --- !u!1 &7015884960563768618
 GameObject:

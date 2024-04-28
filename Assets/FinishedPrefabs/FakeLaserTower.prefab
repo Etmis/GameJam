@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 8646062545724582553}
   m_Layer: 9
   m_Name: Beam_tower 1
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

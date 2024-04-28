@@ -44,12 +44,10 @@ public class SoundManager : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Zvuk " + name + " nebyl nalezen nebo nebyl nastaven AudioSource.");
             }
         }
         else
         {
-            Debug.LogWarning("SoundManager instance není inicializována.");
         }
     }
 }
