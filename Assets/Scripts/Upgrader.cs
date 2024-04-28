@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class Upgrader : MonoBehaviour
 {
     [SerializeField] GameObject paner;
+    public static bool IsUpgrading;
     void Start()
     {
         
@@ -25,7 +26,12 @@ public class Upgrader : MonoBehaviour
                 var nig = hitInfo.transform.GetComponent<Tower>();
                 if (nig != null)
                 {
-                    Aktivuj();
+                    if(!Escape.isInSettings && !Builder.builder)
+                    {
+                        Aktivuj();
+                        
+                    }
+                    
 
                 }
             }
@@ -47,6 +53,7 @@ public class Upgrader : MonoBehaviour
         {
             PlayerMovement.sensitivity = 5;
         }
+        IsUpgrading = false;
         
     }
     void Aktivuj()
@@ -56,6 +63,7 @@ public class Upgrader : MonoBehaviour
         UnityEngine.Cursor.visible = true;
         Time.timeScale = 0;
         PlayerMovement.sensitivity = 0;
+        IsUpgrading = true;
     }
 
    
