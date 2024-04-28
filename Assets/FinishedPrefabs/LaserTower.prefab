@@ -165,8 +165,8 @@ MonoBehaviour:
   fire_Rate: 5
   damage: 20
   coolDown: 0
-  price: 0
-  upgradePrice: 0
+  price: 100
+  currentPrice: 0
   RangeTransform: {fileID: 5445786221154096923}
   LaserPlace: {fileID: 7646577165971896315}
   LaserPlacestatic: {fileID: 1644216225218107761}
