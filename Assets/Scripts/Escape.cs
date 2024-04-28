@@ -51,12 +51,6 @@ public class Escape : MonoBehaviour
                 escapPaner.SetActive(true);
                 tutorialText.gameObject.SetActive(false);
                 MenuContextStuffNeeded();
-                if (Builder.builder)
-                {
-                    Builder.builder = false;
-                    Destroy(Builder.preview);
-                    Builder.img.gameObject.SetActive(false);
-                }
             }
         }
         CashText.text = "Cash: " + Money.Instance.CurrentMoney.ToString();

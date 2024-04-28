@@ -801,13 +801,19 @@ MonoBehaviour:
   towers:
   - {fileID: 4681734404340949745, guid: c31c7c4ece93470498e829b88cae1425, type: 3}
   - {fileID: 8931264781804949150, guid: 7be14675d66a79d44b2b626d29578dac, type: 3}
+  - {fileID: 8184212382854337094, guid: 623b753d5d62b5d4ab93e55e6da78513, type: 3}
+  - {fileID: 650052886766609454, guid: 55e0042ee15b8dc4592c9c005b70969f, type: 3}
   fakeTowers:
-  - {fileID: 4681734404340949745, guid: 27ae2fa171e24cf47ad961f407306b52, type: 3}
-  - {fileID: 8931264781804949150, guid: 036f89e0a9726a045b0aaedc62c0cd7c, type: 3}
+  - {fileID: 4681734404340949745, guid: 6772600a402c8314d8166de42d049c8a, type: 3}
+  - {fileID: 8931264781804949150, guid: 8768ab41bccb06f42b46f57de981cddc, type: 3}
+  - {fileID: 8184212382854337094, guid: d7bf193f344a76b4393c20a6b8ea9f62, type: 3}
+  - {fileID: 650052886766609454, guid: 8d012a6ac24131d448457acf52c572b8, type: 3}
   images:
   - {fileID: 21300000, guid: 7b6bde0b1d2c3514ea6df271c25997b5, type: 3}
-  - {fileID: 21300000, guid: f0365dd81fa392142b608dbabf80d817, type: 3}
   - {fileID: 21300000, guid: 278edb367c1f5004da814677d112c09e, type: 3}
+  - {fileID: 21300000, guid: 67e6af791b28e3847a1a4ca290246e24, type: 3}
+  - {fileID: 21300000, guid: f0365dd81fa392142b608dbabf80d817, type: 3}
+  img: {fileID: 1433688424}
   parent: {fileID: 1249409472}
 --- !u!4 &1771934160 stripped
 Transform:
