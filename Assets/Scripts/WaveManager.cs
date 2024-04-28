@@ -21,8 +21,6 @@ public class WaveManager : MonoBehaviour
 
     public List<Wave> waves = new List<Wave>();
 
-    int currentWaveIndex = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +42,7 @@ public class WaveManager : MonoBehaviour
     {
         foreach (Wave wave in waves)
         {
+            Escape.WaveCount++;
             yield return new WaitForSeconds(8f);
             foreach (EnemySpawnData spawnData in wave.enemies)
             {
