@@ -42,22 +42,20 @@ public class Escape : MonoBehaviour
                 tutorialText.gameObject.SetActive(true);
                 OutOfMenuContextStuffNeeded();
                 isInSettings = false;
-                
-
             }
-            else
+            else if (!settingsPaner.activeInHierarchy)
             {
-                if(!settingsPaner.activeInHierarchy)
+                escapPaner.SetActive(true);
+                tutorialText.gameObject.SetActive(false);
+                MenuContextStuffNeeded();
+                isInSettings = true;
+                if (Builder.builder)
                 {
-                    escapPaner.SetActive(true);
-                    tutorialText.gameObject.SetActive(false);
-                    MenuContextStuffNeeded();
-                    isInSettings=true;
-                    
+                    Builder.builder = false;
+                    Destroy(Builder.preview);
+                    Builder.img.gameObject.SetActive(false);
                 }
-                
             }
-
         }
         CashText.text = "Cash: " + Money.Instance.CurrentMoney.ToString();
     }

@@ -58,13 +58,16 @@ public class WaveManager : MonoBehaviour
     private void MakeWaves()
     {
         Wave firstWave = new Wave();
-        firstWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 5, cooldown = 2f });
+        firstWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 3, cooldown = 2f });
         waves.Add(firstWave);
         //----------------------------------
         Wave secondWave = new Wave();
         secondWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 5, cooldown = 2f });
-        secondWave.enemies.Add(new EnemySpawnData { enemyPrefab = secondEnemy, count = 3, cooldown = 1f });
         waves.Add(secondWave);
+        //----------------------------------
+        Wave thirdWave = new Wave();
+        thirdWave.enemies.Add(new EnemySpawnData { enemyPrefab = firstEnemy, count = 5, cooldown = 2f });
+        secondWave.enemies.Add(new EnemySpawnData { enemyPrefab = secondEnemy, count = 3, cooldown = 2f });
     }
 }
 

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -17,7 +16,7 @@ public class Tower : MonoBehaviour
     [SerializeField]
     protected float coolDown;
     [SerializeField]
-    protected int price;
+    public int price;
     [SerializeField]
     protected int upgradePrice;
     protected float currentPrice;

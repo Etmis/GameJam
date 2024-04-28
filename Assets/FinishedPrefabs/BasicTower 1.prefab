@@ -368,7 +368,7 @@ MonoBehaviour:
   fire_Rate: 1
   damage: 100
   coolDown: 5
-  price: 0
+  price: 100
   upgradePrice: 0
   RangeTransform: {fileID: 3742879327950942515}
   RotateHeadofTower: {fileID: 6678623113064910165}
