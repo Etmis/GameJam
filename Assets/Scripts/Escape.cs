@@ -16,6 +16,7 @@ public class Escape : MonoBehaviour
     [SerializeField] TMPro.TMP_Text CashText;
     [SerializeField]TMPro.TMP_Text waveText;
     public static int WaveCount;
+    public static bool isInSettings;
     
 
     
@@ -36,27 +37,27 @@ public class Escape : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (!Upgrader.IsUpgrading && !Builder.builder)
         {
-            if(escapPaner.activeInHierarchy)
+
+
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                escapPaner.SetActive(false);
-                
-                tutorialText.gameObject.SetActive(true);
-                OutOfMenuContextStuffNeeded();
-               
-            }
-            else if (!settingsPaner.activeInHierarchy)
-            {
-                escapPaner.SetActive(true);
-                tutorialText.gameObject.SetActive(false);
-                MenuContextStuffNeeded();
-                
-                if (Builder.builder)
+                if (escapPaner.activeInHierarchy)
                 {
-                    Builder.builder = false;
-                    Destroy(Builder.preview);
-                    Builder.img.gameObject.SetActive(false);
+                    escapPaner.SetActive(false);
+
+                    tutorialText.gameObject.SetActive(true);
+                    OutOfMenuContextStuffNeeded();
+                    isInSettings = false;
+
+                }
+                else if (!settingsPaner.activeInHierarchy)
+                {
+                    escapPaner.SetActive(true);
+                    tutorialText.gameObject.SetActive(false);
+                    MenuContextStuffNeeded();
+                    isInSettings = true;
                 }
             }
         }

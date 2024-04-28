@@ -16,7 +16,7 @@ public class Builder : MonoBehaviour
     [SerializeField]
     List<Sprite> images = new List<Sprite>();
 
-    [SerializeField] public static Image img;
+    public Image img;
 
     [SerializeField]
     GameObject parent;
@@ -24,7 +24,7 @@ public class Builder : MonoBehaviour
     private int index = 0;
     public static bool builder = false;
     private GameObject currentTower;
-    public static GameObject preview;
+    private static GameObject preview;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +52,7 @@ public class Builder : MonoBehaviour
 
     private void CheckButton()
     {
-        if (Input.GetButtonDown("Builder"))
+        if (Input.GetButtonDown("Builder") && !Escape.isInSettings&& !Upgrader.IsUpgrading)
         {
             if (builder)
             {
@@ -101,22 +101,26 @@ public class Builder : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         bool canSpawn = true;
+        Debug.Log("Spawnuju tower " + currentTower);
         int layerMask = LayerMask.GetMask("FakeTower");
         if (Money.Instance.CurrentMoney >= currentTower.GetComponent<Tower>().price)
         {
             if (Physics.Raycast(ray, out hit, 5, ~layerMask))
             {
+                Debug.Log("n");
                 Collider[] colliders = Physics.OverlapSphere(hit.point, 2f);
                 foreach (Collider collider in colliders)
                 {
-                    if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
+                    Debug.Log("e");
+                    /*if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
                     {
+                        Debug.Log("g");
                         canSpawn = false;
-                        break;
-                    }
+                    }*/
                 }
                 if (canSpawn)
                 {
+                    Debug.Log("r");
                     Money.Instance.Remove(currentTower.GetComponent<Tower>().price);
                     Instantiate(currentTower, hit.point, Quaternion.identity);
                 }

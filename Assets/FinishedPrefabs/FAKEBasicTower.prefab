@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1120905944541454401}
   - component: {fileID: 7712987451545182849}
   - component: {fileID: 3471263972615445034}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1886765587441821909}
   - component: {fileID: 7896093037184563564}
   - component: {fileID: 3914511718557942873}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6678623113064910165}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 7684840645448461117}
   - component: {fileID: 9173131033067227408}
   - component: {fileID: 4158491141855383681}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5195514981574718709}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: LaserPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,9 +325,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8763977819002447477}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: FAKEBasicTower
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 2368752790468230317}
   - component: {fileID: 2337427661064020705}
   - component: {fileID: 9125096341622703193}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Torus.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 7058992880205450782}
   - component: {fileID: 1732695151714056320}
   - component: {fileID: 7858157808937165919}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6162949650108470651}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: basic tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 1024356686446405793}
   - component: {fileID: 1762568695270492885}
   - component: {fileID: 3602335212715476047}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 9080546915966521621}
   - component: {fileID: 4327490560715286787}
   - component: {fileID: 8268115958813320275}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 8936786869595170108}
   - component: {fileID: 3294168046193184363}
   - component: {fileID: 4469970372985155179}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 1924659677417199640}
   - component: {fileID: 1788229772555328917}
   - component: {fileID: 2616145361230650248}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

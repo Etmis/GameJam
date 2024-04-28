@@ -9,7 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5617063204882772717}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  - component: {fileID: 5906445920783393945}
+  m_Layer: 8
+>>>>>>> e22f1986db934eed5154fa691af249e7ffa652ca
   m_Name: Laserplace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +47,7 @@ GameObject:
   - component: {fileID: 3985361697433484493}
   - component: {fileID: 6539344910871672739}
   - component: {fileID: 2847590141481278603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pyramid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,8 +129,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4113245896448297669}
   - component: {fileID: 1516805831645558452}
+<<<<<<< HEAD
   - component: {fileID: 6453477340497836151}
   m_Layer: 0
+=======
+  m_Layer: 8
+>>>>>>> e22f1986db934eed5154fa691af249e7ffa652ca
   m_Name: lazer_tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +285,7 @@ GameObject:
   - component: {fileID: 965047727758987680}
   - component: {fileID: 8401984465878001470}
   - component: {fileID: 117047070755290081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +368,7 @@ GameObject:
   - component: {fileID: 5284040729304284104}
   - component: {fileID: 6125964468950785099}
   - component: {fileID: 7580431922216601684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +451,7 @@ GameObject:
   - component: {fileID: 8511326539516125129}
   - component: {fileID: 7317438057263730016}
   - component: {fileID: 6214772623070421102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,9 +533,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2634137493958326778}
   - component: {fileID: 3231861958717884136}
-  m_Layer: 0
+  - component: {fileID: -6315726061417479658}
+  m_Layer: 8
   m_Name: TeslaTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,7 +578,25 @@ MonoBehaviour:
   RangeTransform: {fileID: 5861611030549168814}
   countOfLighting: 2
   LaserPlace: {fileID: 5617063204882772717}
+<<<<<<< HEAD
   lineRenderer: {fileID: 6453477340497836151}
+=======
+  lineRenderer: {fileID: 5906445920783393945}
+--- !u!136 &-6315726061417479658
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184212382854337094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5359969
+  m_Height: 4.100808
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.877739, z: 0.3718642}
+>>>>>>> e22f1986db934eed5154fa691af249e7ffa652ca
 --- !u!1 &8400422463621425869
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +608,7 @@ GameObject:
   - component: {fileID: 874685146638563064}
   - component: {fileID: 6774957549969596265}
   - component: {fileID: 2821296873532718395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +692,7 @@ GameObject:
   - component: {fileID: 2036061700759752353}
   - component: {fileID: 6547555005959937809}
   - component: {fileID: 1003482543446981301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
