@@ -566,6 +566,7 @@ MonoBehaviour:
   damage: 5
   coolDown: 0
   price: 100
+  currentPrice: 0
   RangeTransform: {fileID: 5861611030549168814}
   countOfLighting: 2
   LaserPlace: {fileID: 5617063204882772717}
