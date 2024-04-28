@@ -59,6 +59,7 @@ public class Builder : MonoBehaviour
                 builder = false;
                 currentTower = towers[0];
                 img.gameObject.SetActive(false);
+                Destroy(preview);
             }
             else if (!builder)
             {
@@ -112,11 +113,11 @@ public class Builder : MonoBehaviour
                 foreach (Collider collider in colliders)
                 {
                     Debug.Log("e");
-                    /*if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
+                    if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
                     {
                         Debug.Log("g");
                         canSpawn = false;
-                    }*/
+                    }
                 }
                 if (canSpawn)
                 {
