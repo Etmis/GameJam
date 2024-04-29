@@ -148,4 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 300
   currentHP: 0
-  MoneyForKill: 25
+  MoneyForKill: 100
