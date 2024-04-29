@@ -16,7 +16,7 @@ public class IceTower : Tower
         if (hitColliders != null && hitColliders[0].GetComponent<EnemyHP>())
         {
             Debug.Log("dìlej");
-            SoundManager.PlaySound("iceTower", base.audioSource);
+            
 
         }
 
