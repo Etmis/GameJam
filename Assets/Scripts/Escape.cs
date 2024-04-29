@@ -23,7 +23,7 @@ public class Escape : MonoBehaviour
     
     void Start()
     {
-        
+        WaveCount = 0;
         if(PlayerPrefs.HasKey("sensitivity"))
         {
             LoadSettings();
@@ -38,6 +38,7 @@ public class Escape : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!Upgrader.IsUpgrading && !Builder.builder)
         {
 

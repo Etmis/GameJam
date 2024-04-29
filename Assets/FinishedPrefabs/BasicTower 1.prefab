@@ -367,9 +367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 25
   fire_Rate: 1
-  damage: 100
+  damage: 5
   coolDown: 5
-  price: 200
+  price: 100
   currentPrice: 0
   RangeTransform: {fileID: 3742879327950942515}
   RotateHeadofTower: {fileID: 6678623113064910165}
