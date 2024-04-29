@@ -9,14 +9,18 @@ public class IceTower : Tower
   
     public override void Attacks()
     {
-    
+
+        timeToFire = fire_Rate;
+
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
         closestN = null;
         if (hitColliders != null && hitColliders[0].GetComponent<EnemyHP>())
         {
             Debug.Log("dìlej");
-            
+            SoundManager.PlaySound("iceTower");
+
+
 
         }
 
@@ -34,7 +38,6 @@ public class IceTower : Tower
 
             }
         }
-        SoundManager.PlaySound("iceTower");
 
         
     }
