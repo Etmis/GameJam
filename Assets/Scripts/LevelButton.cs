@@ -29,6 +29,9 @@ public class LevelButton : MonoBehaviour
     public void gagahgah()
     {
         Time.timeScale = 1;
+        Builder.builder = false;
+        Escape.isInSettings = false;
+        Upgrader.IsUpgrading = false;
     }
 
 }
