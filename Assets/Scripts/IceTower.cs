@@ -34,6 +34,7 @@ public class IceTower : Tower
 
             }
         }
+        SoundManager.PlaySound("iceTower");
 
         
     }

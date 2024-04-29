@@ -53,7 +53,9 @@ public class WaveManager : MonoBehaviour
                     Instantiate(spawnData.enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
                 }
             }
+            SoundManager.PlaySound("endWave");
         }
+
     }
 
     private void MakeWaves()

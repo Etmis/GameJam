@@ -107,22 +107,19 @@ public class Builder : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 5, ~layerMask))
             {
-                Debug.Log("n");
                 Collider[] colliders = Physics.OverlapSphere(hit.point, 2f);
                 foreach (Collider collider in colliders)
                 {
-                    Debug.Log("e");
                     if (collider.CompareTag("Blockator") || collider.CompareTag("Tower"))
-                    {
-                        Debug.Log("g");
+                    {                       
                         canSpawn = false;
                     }
                 }
                 if (canSpawn)
                 {
-                    Debug.Log("r");
                     Money.Instance.Remove(currentTower.GetComponent<Tower>().price);
                     Instantiate(towers[index], hit.point, Quaternion.identity);
+                    SoundManager.PlaySound("build");
                 }
                 canSpawn = true;
             }
