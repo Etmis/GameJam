@@ -47,11 +47,11 @@ public class Escape : MonoBehaviour
             {
                 if (escapPaner.activeInHierarchy)
                 {
-                    escapPaner.SetActive(false);
+                   
 
-                    tutorialText.gameObject.SetActive(true);
+                    
                     OutOfMenuContextStuffNeeded();
-                    isInSettings = false;
+                    
 
                 }
                 else if (!settingsPaner.activeInHierarchy)
@@ -102,9 +102,12 @@ public class Escape : MonoBehaviour
     }
     public void OutOfMenuContextStuffNeeded()
     {
+        escapPaner.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+        tutorialText.gameObject.SetActive(true);
+        isInSettings = false;
         LoadSettings();
     }
     public void ExitGame()
