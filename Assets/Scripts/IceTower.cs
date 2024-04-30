@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class IceTower : Tower
 {
-
+    bool alreadyPlayedMusic;
   
     public override void Attacks()
     {
@@ -15,14 +15,7 @@ public class IceTower : Tower
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
         closestN = null;
-        if (hitColliders != null && hitColliders[0].GetComponent<EnemyHP>())
-        {
-            Debug.Log("dìlej");
-            SoundManager.PlaySound("iceTower");
-
-
-
-        }
+        alreadyPlayedMusic = false;
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
@@ -30,6 +23,12 @@ public class IceTower : Tower
             Collider collider = hitColliders[i];
             if (collider.gameObject.transform.root.gameObject.GetComponent<EnemyHP>() != null)
             {
+                if (!alreadyPlayedMusic) 
+                {
+                    SoundManager.PlaySound("iceTower");
+                    alreadyPlayedMusic = true;
+                }
+                Debug.Log(i + "hoooooooooooooooooooooooooooo" + collider.gameObject.transform.root.gameObject.GetComponent<EnemyHP>());
                 Vector3 poziceNepriatele = collider.transform.position;
                 collider.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().FreezeDamage(coolDown);
 

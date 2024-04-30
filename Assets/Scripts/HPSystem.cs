@@ -23,6 +23,10 @@ public class HPSystem : MonoBehaviour
         else
         { 
             currentHP -= damage;
+            if(currentHP <= 0) { 
+               Destroy(gameObject);
+            }
+
         }
 
     }
