@@ -37,7 +37,7 @@ public class Tower : MonoBehaviour
     {
         if(Money.Instance.CurrentMoney >= (currentPrice + (currentPrice * 0.3f))) 
         { 
-        damage = damage * 0.3f; 
+        damage += damage * 0.3f; 
         currentPrice += price * 0.2f;
         fire_Rate = fire_Rate / 1.2f;
         if(coolDown != 0)
