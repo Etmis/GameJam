@@ -9,6 +9,10 @@ public class Upgrader : MonoBehaviour
     [SerializeField] List<Sprite> sprity;
     [SerializeField] Image sellImage;
     [SerializeField] Image upgradeImage;
+    [SerializeField] TMPro.TMP_Text upgradeText;
+    [SerializeField] TMPro.TMP_Text sellText;
+    [SerializeField] TMPro.TMP_Text dmgText;
+
 
     public static bool IsUpgrading;
     bool readyToSell;
@@ -73,6 +77,11 @@ public class Upgrader : MonoBehaviour
     }
     void Aktivuj()
     {
+        var js = currentTower.getInfo();
+        upgradeText.text = js.moneyNeededToUpgrade.ToString();
+        sellText.text = js.moneyGotIfSold.ToString();
+        dmgText.text = js.dmgBeforeUpgrade.ToString() + "DMG";
+        
         paner.SetActive(true);
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         UnityEngine.Cursor.visible = true;
@@ -93,6 +102,7 @@ public class Upgrader : MonoBehaviour
         }
         else
         {
+           
             readyToSell = true;
             sellImage.sprite = sprity[3];
 
@@ -122,8 +132,10 @@ public class Upgrader : MonoBehaviour
         }
         else
         {
+            var js = currentTower.getInfo();
             readyToUpgrade = true;
             upgradeImage.sprite = sprity[3];
+            dmgText.text = js.dmgAfterUpgrade.ToString() + "DMG";
 
         }
     }

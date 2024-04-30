@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 200
   currentHP: 0
-  MoneyForKill: 100
+  MoneyForKill: 40
 --- !u!54 &-3128418085527830579
 Rigidbody:
   m_ObjectHideFlags: 0

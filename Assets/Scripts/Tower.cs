@@ -30,24 +30,26 @@ public class Tower : MonoBehaviour
     public void Start()
     {
         currentPrice = price;
-        RangeTransform.localScale = new Vector3(range,0.001f,range);
+        RangeTransform.localScale = new Vector3(range, 0.001f, range);
         audioSource = GetComponent<AudioSource>();
     }
-   public bool IsPossbileToUpgrade()
+    public bool IsPossbileToUpgrade()
     {
-        if(Money.Instance.CurrentMoney >= (currentPrice + (currentPrice * 0.3f))) 
-        { 
-        damage += damage * 0.3f; 
-        currentPrice += price * 0.2f;
-        fire_Rate = fire_Rate / 1.2f;
-        if(coolDown != 0)
+        if (Money.Instance.CurrentMoney >= (currentPrice + (currentPrice * 0.2f)))
         {
-            coolDown = coolDown * 1.5f;
-        }
-        Money.Instance.Remove((int)(currentPrice + (currentPrice * 0.3f)));
+            damage += damage * 0.3f;
+            currentPrice += price * 0.2f;
+
+            if (coolDown != 0)
+            {
+                coolDown = coolDown * 1.5f;
+            }
+            Money.Instance.Remove((int)(currentPrice + (currentPrice * 0.2f)));
             return true;
-        }else {
-        return false;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -55,20 +57,21 @@ public class Tower : MonoBehaviour
     {
 
         timeToFire -= Time.deltaTime;
-        if (timeToFire < 0) { 
-        Attacks();
+        if (timeToFire < 0)
+        {
+            Attacks();
         }
     }
-   
 
-    
+
+
     public virtual void Attacks()
     {
-        
+
         timeToFire = fire_Rate;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range / 2);
 
-         closestN = null;
+        closestN = null;
         float closestRange = Mathf.Infinity;
 
         for (int i = 0; i < hitColliders.Length; i++)
@@ -91,15 +94,24 @@ public class Tower : MonoBehaviour
 
         if (closestN != null)
         {
-           // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
+            // CanonHead.LookAt(closestN.gameObject.transform.root.gameObject.transform);
             closestN.gameObject.transform.root.gameObject.GetComponent<EnemyHP>().DooDamage(damage);
         }
     }
 
-    public void Sell() 
+    public void Sell()
     {
         Money.Instance.Add((int)Math.Round((currentPrice / 100) * 60)); // 60 % of full price
         Destroy(gameObject);
+    }
+    public UpgradeStats getInfo()
+    {
+        int upgradePrice = (int)(currentPrice + (price * 0.2));
+        int sellPrice = (int)(currentPrice * 0.60);
+        int dmg = (int)damage;
+        int dmgAfter = (int)(damage + (dmg * 0.3));
+        UpgradeStats us = new UpgradeStats(upgradePrice, sellPrice, dmg, dmgAfter);
+        return us;
     }
 }
 
