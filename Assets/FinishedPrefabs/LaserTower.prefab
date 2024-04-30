@@ -163,10 +163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 25
-  fire_Rate: 2
-  damage: 20
+  fire_Rate: 4
+  damage: 40
   coolDown: 0
-  price: 200
+  price: 250
   currentPrice: 0
   RangeTransform: {fileID: 5445786221154096923}
   LaserPlace: {fileID: 7646577165971896315}

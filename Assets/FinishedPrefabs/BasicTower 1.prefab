@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 25
-  fire_Rate: 1
-  damage: 5
+  fire_Rate: 0.5
+  damage: 3
   coolDown: 5
   price: 100
   currentPrice: 0

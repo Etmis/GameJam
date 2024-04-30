@@ -16,12 +16,12 @@ public class HPSystem : MonoBehaviour
     }
     protected void DoDamage(float damage)
     {
-        if (currentHP <= 0)
+        if (currentHP - damage <= 0)
         {
             Destroy(gameObject);
         }
         else
-        {
+        { 
             currentHP -= damage;
         }
 

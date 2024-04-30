@@ -21,13 +21,15 @@ public class EnemyHP : HPSystem
     }
     public void DooDamage(float damage)
     {
-        if ((currentHP - damage) <= 0) { 
-            
+        
+        base.DoDamage(damage);
+        if ((currentHP) <= 0)
+        {
+
             Money.Instance.Add(MoneyForKill);
 
 
         }
-        base.DoDamage(damage);
     }
 
     internal void FreezeDamage(float coolDown)
